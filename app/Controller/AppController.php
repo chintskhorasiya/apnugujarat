@@ -66,23 +66,66 @@ class AppController extends Controller {
         if($this->params['controller'] == "front")
         {
         $this->loadmodel('News');
+        $this->loadmodel('NewsCategory');
         $this->loadmodel('Page');
         $latest_newzealand_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'1\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_newzealand_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>1)));
+        foreach ($latest_newzealand_footer_data as $latest_newzealand_key => $latest_newzealand_data)
+        {
+            $latest_newzealand_footer_data[$latest_newzealand_key]['News']['cat_id'] = $latest_newzealand_footer_catdata['NewsCategory']['id'];
+            $latest_newzealand_footer_data[$latest_newzealand_key]['News']['cat_name'] = $latest_newzealand_footer_catdata['NewsCategory']['name'];
+            $latest_newzealand_footer_data[$latest_newzealand_key]['News']['cat_slug'] = $latest_newzealand_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_newzealand_footer_data', $latest_newzealand_footer_data);
 
         $latest_sports_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'5\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_sports_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>5)));
+        foreach ($latest_sports_footer_data as $latest_sports_key => $latest_sports_data)
+        {
+            $latest_sports_footer_data[$latest_sports_key]['News']['cat_id'] = $latest_sports_footer_catdata['NewsCategory']['id'];
+            $latest_sports_footer_data[$latest_sports_key]['News']['cat_name'] = $latest_sports_footer_catdata['NewsCategory']['name'];
+            $latest_sports_footer_data[$latest_sports_key]['News']['cat_slug'] = $latest_sports_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_sports_footer_data', $latest_sports_footer_data);
 
         $latest_world_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'4\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_world_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>4)));
+        foreach ($latest_world_footer_data as $latest_world_key => $latest_world_data)
+        {
+            $latest_world_footer_data[$latest_world_key]['News']['cat_id'] = $latest_world_footer_catdata['NewsCategory']['id'];
+            $latest_world_footer_data[$latest_world_key]['News']['cat_name'] = $latest_world_footer_catdata['NewsCategory']['name'];
+            $latest_world_footer_data[$latest_world_key]['News']['cat_slug'] = $latest_world_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_world_footer_data', $latest_world_footer_data);
 
         $latest_gujarat_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_gujarat_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>3)));
+        foreach ($latest_gujarat_footer_data as $latest_gujarat_key => $latest_gujarat_data)
+        {
+            $latest_gujarat_footer_data[$latest_gujarat_key]['News']['cat_id'] = $latest_gujarat_footer_catdata['NewsCategory']['id'];
+            $latest_gujarat_footer_data[$latest_gujarat_key]['News']['cat_name'] = $latest_gujarat_footer_catdata['NewsCategory']['name'];
+            $latest_gujarat_footer_data[$latest_gujarat_key]['News']['cat_slug'] = $latest_gujarat_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_gujarat_footer_data', $latest_gujarat_footer_data);
 
         $latest_bollywood_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'6\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_bollywood_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>6)));
+        foreach ($latest_bollywood_footer_data as $latest_bollywood_key => $latest_bollywood_data)
+        {
+            $latest_bollywood_footer_data[$latest_bollywood_key]['News']['cat_id'] = $latest_bollywood_footer_catdata['NewsCategory']['id'];
+            $latest_bollywood_footer_data[$latest_bollywood_key]['News']['cat_name'] = $latest_bollywood_footer_catdata['NewsCategory']['name'];
+            $latest_bollywood_footer_data[$latest_bollywood_key]['News']['cat_slug'] = $latest_bollywood_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_bollywood_footer_data', $latest_bollywood_footer_data);
 
         $latest_india_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'2\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));
+        $latest_india_footer_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>2)));
+        foreach ($latest_india_footer_data as $latest_india_key => $latest_india_data)
+        {
+            $latest_india_footer_data[$latest_india_key]['News']['cat_id'] = $latest_india_footer_catdata['NewsCategory']['id'];
+            $latest_india_footer_data[$latest_india_key]['News']['cat_name'] = $latest_india_footer_catdata['NewsCategory']['name'];
+            $latest_india_footer_data[$latest_india_key]['News']['cat_slug'] = $latest_india_footer_catdata['NewsCategory']['slug'];
+        }
         $this->set('latest_india_footer_data', $latest_india_footer_data);
 
         $footer_pages_data = $this->Page->find('all', array('conditions' => array('status IN'=> array(1)), 'limit' => 5, 'order' => array('id' => 'asc')));

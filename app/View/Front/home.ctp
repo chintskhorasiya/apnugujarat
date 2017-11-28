@@ -17,14 +17,14 @@ echo $this->element('frontheader');
 									} else{
 										echo '<div class="item news-b">';
 									}
-									echo '<a href="#"><h3>'.$latest_news_data['News']['title'].'</h3></a>';
+									echo '<a href="'.DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_data['News']['cat_slug'].'/'.$latest_news_data['News']['slug'].'"><h3>'.$latest_news_data['News']['title'].'</h3></a>';
 									if(!empty($latest_news_data['News']['images'])){
 										$latest_news_images = explode(',', $latest_news_data['News']['images']);
 										$gallery_main = $latest_news_images[0];
 									} else {
 										$gallery_main = DEFAULT_URL.'img/new-default.png';
 									}
-									echo '<a href="#"><img src="'.$gallery_main.'" alt="'.$latest_news_data['News']['title'].'" /></a>';
+									echo '<a href="'.DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_data['News']['cat_slug'].'/'.$latest_news_data['News']['slug'].'"><img src="'.$gallery_main.'" alt="'.$latest_news_data['News']['title'].'" /></a>';
 									echo '</div>';
 								}
 							}
@@ -77,8 +77,8 @@ echo $this->element('frontheader');
 							$gallery_main = DEFAULT_URL.'img/new-default.png';
 						}
 						?>
-	                	<a href="#"><img src="<?php echo $gallery_main; ?>" alt="<?php echo $latest_news_4th_data['News']['title']; ?>" /></a>
-						<a href="#"><h3><?php echo $latest_news_4th_data['News']['title']; ?></h3></a>
+	                	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_4th_data['News']['cat_slug'].'/'.$latest_news_4th_data['News']['slug']?>"><img src="<?php echo $gallery_main; ?>" alt="<?php echo $latest_news_4th_data['News']['title']; ?>" /></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_4th_data['News']['cat_slug'].'/'.$latest_news_4th_data['News']['slug']?>"><h3><?php echo $latest_news_4th_data['News']['title']; ?></h3></a>
 	              	</div>	
 	              	<?php
               	}
@@ -95,8 +95,8 @@ echo $this->element('frontheader');
 							$gallery_main_5 = DEFAULT_URL.'img/new-default.png';
 						}
 						?>
-	                	<a href="#"><img src="<?php echo $gallery_main_5; ?>" alt="<?php echo $latest_news_5th_data['News']['title']; ?>" /></a>
-						<a href="#"><h3><?php echo $latest_news_5th_data['News']['title']; ?></h3></a>
+	                	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_5th_data['News']['cat_slug'].'/'.$latest_news_5th_data['News']['slug']?>"><img src="<?php echo $gallery_main_5; ?>" alt="<?php echo $latest_news_5th_data['News']['title']; ?>" /></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_5th_data['News']['cat_slug'].'/'.$latest_news_5th_data['News']['slug']?>"><h3><?php echo $latest_news_5th_data['News']['title']; ?></h3></a>
 	              	</div>	
 	              	<?php
               	}
@@ -179,8 +179,8 @@ if(count($latest_newzealand_homepage_data) > 0){
 					$gallery_main_nz = DEFAULT_URL.'img/new-default.png';
 				}
 				?>
-		        <a href="#"><img src="<?=$gallery_main_nz?>" alt="<?php echo $latest_newszealand_data['News']['title']; ?>" /></a>
-				<a href="#"><h3><?php echo mb_substr($latest_newszealand_data['News']['title'], 0, 80); ?></h3></a>
+		        <a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_newszealand_data['News']['cat_slug'].'/'.$latest_newszealand_data['News']['slug']?>"><img src="<?=$gallery_main_nz?>" alt="<?php echo $latest_newszealand_data['News']['title']; ?>" /></a>
+				<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_newszealand_data['News']['cat_slug'].'/'.$latest_newszealand_data['News']['slug']?>"><h3><?php echo mb_substr($latest_newszealand_data['News']['title'], 0, 80); ?></h3></a>
 		   	</div>
 		   	<?php
 		   	}
@@ -199,8 +199,8 @@ if(count($latest_newzealand_homepage_data) > 0){
 					$gallery_main_nz = DEFAULT_URL.'img/new-default.png';
 				}
 				?>
-	   			<a href="#"><img src="<?=$gallery_main_nz?>" alt="<?php echo $latest_newszealand_data['News']['title']; ?>" /></a>
-				<a href="#"><h3><?php echo mb_substr($latest_newszealand_data['News']['title'], 0, 80); ?></h3></a>
+	   			<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_newszealand_data['News']['cat_slug'].'/'.$latest_newszealand_data['News']['slug']?>"><img src="<?=$gallery_main_nz?>" alt="<?php echo $latest_newszealand_data['News']['title']; ?>" /></a>
+				<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_newszealand_data['News']['cat_slug'].'/'.$latest_newszealand_data['News']['slug']?>"><h3><?php echo mb_substr($latest_newszealand_data['News']['title'], 0, 80); ?></h3></a>
             </div>
 	   	<?php } ?>	
 	   	<?php
@@ -242,15 +242,15 @@ $last_latest_aus_num = count($latest_australlia_homepage_data)-1;
 								$gallery_main_aus = DEFAULT_URL.'img/new-default.png';
 							}
 							?>
-		                	<a href="#"><img src="<?=$gallery_main_aus?>" alt="" /></a>
-							<a href="#"><h3><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></h3></a>
+		                	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><img src="<?=$gallery_main_aus?>" alt="" /></a>
+							<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><h3><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></h3></a>
 		              	</div>
 		              	<?php } ?>
 					  	<?php if($latest_aus_num == 1){ ?>
 					  	<ul class="list">
 					  		<?php } ?>
 					  		<?php if($latest_aus_num >= 1 && $latest_aus_num <= 4){ ?>
-					     	<li><a href="#"><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></a></li>
+					     	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></a></li>
 					     	<?php } ?>
 					  	<?php if($latest_aus_num == 4){ ?>
 					  	</ul>
@@ -271,15 +271,15 @@ $last_latest_aus_num = count($latest_australlia_homepage_data)-1;
 								$gallery_main_aus = DEFAULT_URL.'img/new-default.png';
 							}
 							?>
-		                	<a href="#"><img src="<?=$gallery_main_aus?>" alt="" /></a>
-							<a href="#"><h3><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></h3></a>
+		                	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><img src="<?=$gallery_main_aus?>" alt="" /></a>
+							<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><h3><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></h3></a>
 		              	</div>
 		              	<?php } ?>
 					  	<?php if($latest_aus_num == 6){ ?>
 					  	<ul class="list">
 					  		<?php } ?>
 					  		<?php if($latest_aus_num >= 6 && $latest_aus_num <= $last_latest_aus_num){ ?>
-					     	<li><a href="#"><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></a></li>
+					     	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_aus_data['News']['cat_slug'].'/'.$latest_aus_data['News']['slug']?>"><?php echo mb_substr($latest_aus_data['News']['title'], 0, 80); ?></a></li>
 					     	<?php } ?>
 					  	<?php if($latest_aus_num == $last_latest_aus_num){ ?>
 					  	</ul>
@@ -308,8 +308,8 @@ $last_latest_aus_num = count($latest_australlia_homepage_data)-1;
 					}
          			?>
          			<div class="grid-listing">
-						<a href="#"><img src="<?=$gallery_main_world?>" alt="<?php echo $latest_world_data['News']['title']; ?>" /></a>
-						<a href="#"><h3><?php echo mb_substr($latest_world_data['News']['title'], 0, 80); ?></h3></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_world_data['News']['cat_slug'].'/'.$latest_world_data['News']['slug']?>"><img src="<?=$gallery_main_world?>" alt="<?php echo $latest_world_data['News']['title']; ?>" /></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_world_data['News']['cat_slug'].'/'.$latest_world_data['News']['slug']?>"><h3><?php echo mb_substr($latest_world_data['News']['title'], 0, 80); ?></h3></a>
 				   	</div>
          			<?php
          		}
@@ -348,8 +348,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 		       		<div class="col-md-6 gray-bg">
 		       		<?php } ?>
 				   		<div class="grid-listing">
-				        	<a href="#"><img src="<?=$gallery_main_guj?>" alt="<?=$latest_gujarat_data['News']['title']?>" /></a>
-							<a href="#"><h3><?php echo mb_substr($latest_gujarat_data['News']['title'], 0, 80); ?></h3></a>
+				        	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_gujarat_data['News']['cat_slug'].'/'.$latest_gujarat_data['News']['slug']?>"><img src="<?=$gallery_main_guj?>" alt="<?=$latest_gujarat_data['News']['title']?>" /></a>
+							<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_gujarat_data['News']['cat_slug'].'/'.$latest_gujarat_data['News']['slug']?>"><h3><?php echo mb_substr($latest_gujarat_data['News']['title'], 0, 80); ?></h3></a>
 				   		</div> 
 			   		<?php if($latest_gujarat_key == 3) { ?>
 			   		</div>
@@ -363,8 +363,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 						<div class="carousel-inner">
 			   		<?php } ?>
 				  	<div class="item <?php if($latest_gujarat_key == 4) { ?>active<?php } ?> news-b">
-					      	<a href="#"><img src="<?=$gallery_main_guj?>" alt="<?=$latest_gujarat_data['News']['title']?>" /></a>
-			          	<a href="#"><h3><?php echo mb_substr($latest_gujarat_data['News']['title'], 0, 80); ?></h3></a>
+					      	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_gujarat_data['News']['cat_slug'].'/'.$latest_gujarat_data['News']['slug']?>"><img src="<?=$gallery_main_guj?>" alt="<?=$latest_gujarat_data['News']['title']?>" /></a>
+			          	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_gujarat_data['News']['cat_slug'].'/'.$latest_gujarat_data['News']['slug']?>"><h3><?php echo mb_substr($latest_gujarat_data['News']['title'], 0, 80); ?></h3></a>
 				  	</div>
 					<?php if($latest_gujarat_key == $last_latest_guj_num) { ?>
 						</div>
@@ -412,8 +412,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 					}
 				?>
 		      	<div class="<?php if($latest_sports_key == 0) { ?>first-news-b <?php } ?> news-b">
-		      		<a href="#"><img src="<?=$gallery_main_sports?>" alt="$latest_sports_data['News']['title']" /></a>
-					<a href="#"><h3><?php echo mb_substr($latest_sports_data['News']['title'], 0, 80); ?></h3></a>
+		      		<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_sports_data['News']['cat_slug'].'/'.$latest_sports_data['News']['slug']?>"><img src="<?=$gallery_main_sports?>" alt="$latest_sports_data['News']['title']" /></a>
+					<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_sports_data['News']['cat_slug'].'/'.$latest_sports_data['News']['slug']?>"><h3><?php echo mb_substr($latest_sports_data['News']['title'], 0, 80); ?></h3></a>
 				</div>
 	            <?php
 	        	}
@@ -481,8 +481,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 					}
 	      			?>
 	      			<div class="item <?php if($latest_bollywood_key == 0){ ?>active<?php } ?> news-b">
-	      				<a href="#"><img src="<?=$gallery_main_bollywood?>" alt="<?=$latest_bollywood_data['News']['title']?>" /></a>
-	      				<a href="#"><h3><?php echo mb_substr($latest_bollywood_data['News']['title'], 0, 80); ?></h3></a>
+	      				<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_bollywood_data['News']['cat_slug'].'/'.$latest_bollywood_data['News']['slug']?>"><img src="<?=$gallery_main_bollywood?>" alt="<?=$latest_bollywood_data['News']['title']?>" /></a>
+	      				<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_bollywood_data['News']['cat_slug'].'/'.$latest_bollywood_data['News']['slug']?>"><h3><?php echo mb_substr($latest_bollywood_data['News']['title'], 0, 80); ?></h3></a>
 	      			</div>
 	      			<?php
 	      			}
@@ -517,8 +517,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 					}
 	      			?>
 					<div class="column-b">
-						<a href="#"><img src="<?=$gallery_main_columns?>" alt="<?=$latest_columns_data['News']['title']?>" /></a>
-						<a href="#"><h3><?php echo mb_substr($latest_columns_data['News']['title'], 0, 80); ?></h3></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_columns_data['News']['cat_slug'].'/'.$latest_columns_data['News']['slug']?>"><img src="<?=$gallery_main_columns?>" alt="<?=$latest_columns_data['News']['title']?>" /></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_columns_data['News']['cat_slug'].'/'.$latest_columns_data['News']['slug']?>"><h3><?php echo mb_substr($latest_columns_data['News']['title'], 0, 80); ?></h3></a>
 					</div>
 					<?php
 					}
@@ -548,8 +548,8 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 					}
 	      			?>
 				   	<div class="grid-listing">
-						<a href="#"><img src="<?=$gallery_main_india?>" alt="" /></a>
-						<a href="#"><h3><?php echo mb_substr($latest_india_data['News']['title'], 0, 80); ?></h3></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_india_data['News']['cat_slug'].'/'.$latest_india_data['News']['slug']?>"><img src="<?=$gallery_main_india?>" alt="" /></a>
+						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_india_data['News']['cat_slug'].'/'.$latest_india_data['News']['slug']?>"><h3><?php echo mb_substr($latest_india_data['News']['title'], 0, 80); ?></h3></a>
 				   	</div>
 				   	<?php
 				   	}

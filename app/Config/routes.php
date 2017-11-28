@@ -32,6 +32,11 @@
 	    array('controller' => 'front', 'action' => 'page_display')
 	);
 
+	Router::connect(
+	    '/news-detail/*',
+	    array('controller' => 'front', 'action' => 'news_detail')
+	);
+
     /*Router::connect(
 	    '/admin',
 	    array('controller' => 'users')

@@ -9,7 +9,7 @@
 			    <?php
 			    foreach ($latest_newzealand_footer_data as $latest_nz_foo_key => $latest_nz_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_nz_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_nz_foo_data['News']['cat_slug'].'/'.$latest_nz_foo_data['News']['slug']?>"><?php echo mb_substr($latest_nz_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
@@ -27,7 +27,7 @@
 			    <?php
 			    foreach ($latest_sports_footer_data as $latest_sp_foo_key => $latest_sp_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_sp_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_sp_foo_data['News']['cat_slug'].'/'.$latest_sp_foo_data['News']['slug']?>"><?php echo mb_substr($latest_sp_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
@@ -45,7 +45,7 @@
 			    <?php
 			    foreach ($latest_world_footer_data as $latest_world_foo_key => $latest_world_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_world_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_world_foo_data['News']['cat_slug'].'/'.$latest_world_foo_data['News']['slug']?>"><?php echo mb_substr($latest_world_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
@@ -63,7 +63,7 @@
 			    <?php
 			    foreach ($latest_gujarat_footer_data as $latest_guj_foo_key => $latest_guj_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_guj_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_guj_foo_data['News']['cat_slug'].'/'.$latest_guj_foo_data['News']['slug']?>"><?php echo mb_substr($latest_guj_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
@@ -81,7 +81,7 @@
 			    <?php
 			    foreach ($latest_bollywood_footer_data as $latest_bolly_foo_key => $latest_bolly_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_bolly_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_bolly_foo_data['News']['cat_slug'].'/'.$latest_bolly_foo_data['News']['slug']?>"><?php echo mb_substr($latest_bolly_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
@@ -99,7 +99,7 @@
 			    <?php
 			    foreach ($latest_india_footer_data as $latest_ind_foo_key => $latest_ind_foo_data) {
 			    	?>
-			    	<li><a href="#"><?php echo mb_substr($latest_ind_foo_data['News']['title'], 0, 19); ?></a></li>
+			    	<li><a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_ind_foo_data['News']['cat_slug'].'/'.$latest_ind_foo_data['News']['slug']?>"><?php echo mb_substr($latest_ind_foo_data['News']['title'], 0, 19); ?></a></li>
 			    	<?php
 			    }
 			    ?>
