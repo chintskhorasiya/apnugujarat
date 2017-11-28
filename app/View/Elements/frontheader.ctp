@@ -23,7 +23,7 @@
 
       	<div class="logo-header"> <!-- logo header start --> 
  		  	<div class="adv1"><a href="#"><img src="<?=DEFAULT_URL?>img/adv1.jpg" alt="" /></a></div>
-		  	<div class="logo"><a href="#"><img src="<?=DEFAULT_URL?>img/logo.png" alt="logo" /></a></div>
+		  	<div class="logo"><a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/logo.png" alt="logo" /></a></div>
 		  	<div class="adv2"><a href="#"><img src="<?=DEFAULT_URL?>img/adv2.jpg" alt="" /></a></div> 
 		   	<div class="clear"></div>
 	  	</div> <!-- logo header end -->

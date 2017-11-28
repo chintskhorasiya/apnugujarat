@@ -53,6 +53,8 @@ class AppController extends Controller {
 //        $sendpage = $this->referer();
 //        $this->set("sendpage",$sendpage);
 
+        //$this->pre($this->params);
+
         if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news")
         {
             $pagenames = $this->params['controller'].'/'.$this->params['action'];
@@ -133,14 +135,39 @@ class AppController extends Controller {
         }
         // for front footer data
 
-        $this->set_title($pagenames);
+        if($this->params['controller'] == "front") {
+            $this->set_title($pagenames, $this->params['pass']);
+        } else {
+            $this->set_title($pagenames);
+        }
 
         $encrypt_id = $this->encrypt_data($this->Session->read(md5(SITE_TITLE) . 'USERID'),ID_LENGTH);
         $this->set('encrypt_id',$encrypt_id);
     }
 
-    function set_title($pagenames) {
+    function set_title($pagenames, $params) {
         //echo $pagenames;
+        //var_dump($params);
+        $dynamic_name = '';
+        if($pagenames == "news_detail")
+        {
+            $this->loadmodel('News');
+            $this->loadmodel('NewsCategory');
+            $category_data = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'slug'=>$params[0])));
+            //$this->pre($category_data);
+            if(!empty($category_data['NewsCategory']['name']))
+            {
+                $dynamic_name .= $category_data['NewsCategory']['name'];
+            }
+
+            $news_data = $this->News->find('first', array('conditions' => array('status IN'=> array(1), 'slug'=>$params[1])));
+            //$this->pre($news_data);
+            if(!empty($news_data['News']['title']))
+            {
+                $dynamic_name .= ' - '.$news_data['News']['title'];
+            }
+        }
+
         $title_arr = array(
             'index'=>'Login',
             'admin_dashboard'=>'Dashboard',
@@ -157,7 +184,9 @@ class AppController extends Controller {
             'news/admin_lists'=>'News List',
             'news/admin_add'=>'Add News',
             'news/admin_edit'=>'Edit News',
-            'news/admin_search'=>'Searched News List'
+            'news/admin_search'=>'Searched News List',
+            'home'=>'Home page',
+            'news_detail'=>$dynamic_name
         );
 //
         //echo $title_arr[$pagenames];
