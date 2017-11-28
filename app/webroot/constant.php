@@ -9,6 +9,7 @@ define("SITE_FOLDER","cakephp/apnucake2");
 
 if(!defined("DEFAULT_URL")) define("DEFAULT_URL","http://".$_SERVER["HTTP_HOST"]."/".SITE_FOLDER."/");
 if(!defined("DEFAULT_FRONT_NEWS_DETAIL_URL")) define("DEFAULT_FRONT_NEWS_DETAIL_URL", DEFAULT_URL.'news-detail/');
+if(!defined("DEFAULT_FRONT_NEWS_CATEGORY_URL")) define("DEFAULT_FRONT_NEWS_CATEGORY_URL", DEFAULT_URL.'news/');
 if(!defined("DEFAULT_ADMINURL")) define("DEFAULT_ADMINURL","http://".$_SERVER["HTTP_HOST"]."/".SITE_FOLDER."/admin/");
 define("INCLUDE_SITE_ROOT",$_SERVER["DOCUMENT_ROOT"]."/".SITE_FOLDER."/app/webroot/");
 define("SITE_ROOT_IMAGE",$_SERVER["DOCUMENT_ROOT"]."/".SITE_FOLDER."/app/webroot/img/");

@@ -33,6 +33,11 @@
 	);
 
 	Router::connect(
+	    '/news/*',
+	    array('controller' => 'front', 'action' => 'news_listing')
+	);
+
+	Router::connect(
 	    '/news-detail/*',
 	    array('controller' => 'front', 'action' => 'news_detail')
 	);

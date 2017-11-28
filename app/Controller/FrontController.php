@@ -144,6 +144,53 @@ class FrontController extends AppController
 
     }
 
+    public function news_listing($categoryslug)
+    {
+        $this->loadmodel('NewsCategory');
+        $get_newscat_data_by_slug = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'slug'=>$categoryslug)));
+
+        if(!empty($get_newscat_data_by_slug['NewsCategory']['name']))
+        {
+            $category_title = $get_newscat_data_by_slug['NewsCategory']['name'];
+            $category_id = $get_newscat_data_by_slug['NewsCategory']['id'];
+        } else {
+            $category_title = '';
+            $category_id = '';
+        }
+
+        if(!empty($category_id)){
+            $get_catenews_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\''.$category_id.'\',categories)'), 'limit' => 17, 'order' => array('id' => 'desc')));
+            //$this->pre($get_morenews_data_by_category);exit;
+            $catenews_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>$category_id)));
+            foreach ($get_catenews_data_by_category as $catenews_key => $catenews_data)
+            {
+                $get_catenews_data_by_category[$catenews_key]['News']['cat_id'] = $catenews_catdata['NewsCategory']['id'];
+                $get_catenews_data_by_category[$catenews_key]['News']['cat_name'] = $catenews_catdata['NewsCategory']['name'];
+                $get_catenews_data_by_category[$catenews_key]['News']['cat_slug'] = $catenews_catdata['NewsCategory']['slug'];
+            }
+
+            $get_sidebarupr_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 7, 'order' => array('id' => 'desc')));
+            //$this->pre($get_morenews_data_by_category);exit;
+            $sidebarupr_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>3)));
+            foreach ($get_sidebarupr_data_by_category as $sidebarupr_key => $sidebarupr_data)
+            {
+                $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_id'] = $sidebarupr_catdata['NewsCategory']['id'];
+                $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_name'] = $sidebarupr_catdata['NewsCategory']['name'];
+                $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_slug'] = $sidebarupr_catdata['NewsCategory']['slug'];
+            }
+
+        } else {
+            $get_catenews_data_by_category = array();
+            $get_sidebarupr_data_by_category = array();    
+        }
+
+        //$this->pre($category_title);
+        //$this->pre($get_catenews_data_by_category);
+        $this->set('category_title', $category_title);
+        $this->set('category_news_data', $get_catenews_data_by_category);
+        $this->set('news_page_sidebarupr', $get_sidebarupr_data_by_category);
+    }
+
     public function news_detail($categoryslug, $slug)
     {
         //$this->loadmodel('Page');

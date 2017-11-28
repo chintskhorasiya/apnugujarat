@@ -130,6 +130,9 @@ class AppController extends Controller {
         }
         $this->set('latest_india_footer_data', $latest_india_footer_data);
 
+        $header_cate_menus_data = $this->NewsCategory->find('all', array('conditions' => array('status IN'=> array(1), 'menu_enabled'=>1), 'limit' => 8, 'order' => array('id' => 'asc')));
+        $this->set('header_cate_menus_data', $header_cate_menus_data);
+        
         $footer_pages_data = $this->Page->find('all', array('conditions' => array('status IN'=> array(1)), 'limit' => 5, 'order' => array('id' => 'asc')));
         $this->set('footer_pages_data', $footer_pages_data);
         }
@@ -149,7 +152,7 @@ class AppController extends Controller {
         //echo $pagenames;
         //var_dump($params);
         $dynamic_name = '';
-        if($pagenames == "news_detail")
+        if($pagenames == "news_detail" || $pagenames == "news_listing")
         {
             $this->loadmodel('News');
             $this->loadmodel('NewsCategory');
@@ -186,7 +189,8 @@ class AppController extends Controller {
             'news/admin_edit'=>'Edit News',
             'news/admin_search'=>'Searched News List',
             'home'=>'Home page',
-            'news_detail'=>$dynamic_name
+            'news_detail'=>$dynamic_name,
+            'news_listing'=>$dynamic_name
         );
 //
         //echo $title_arr[$pagenames];

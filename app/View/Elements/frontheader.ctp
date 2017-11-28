@@ -39,16 +39,17 @@
 			    	<li class="active home-menu">
 				  		<a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/home-icon.png" alt="home" /></a>
 				  	</li>
-				  	<li><a href="#">New Zealand</a></li>
-				  	<li><a href="#">India</a></li>
-				  	<li><a href="#">Gujarat</a></li>
-				  	<li><a href="#">World</a></li>
-				  	<li><a href="#">Sports</a></li>
-				  	<li><a href="#">Bollywood</a></li>
-				  	<li><a href="#">Columns</a></li>
+				  	<?php //var_dump($header_cate_menus_data); ?>
+				  	<?php
+				  	foreach ($header_cate_menus_data as $newscate_key => $newscate_data) {
+				  		?>
+				  		<li><a href="<?=DEFAULT_FRONT_NEWS_CATEGORY_URL.$newscate_data['NewsCategory']['slug']?>"><?=$newscate_data['NewsCategory']['name'];?></a></li>
+				  		<?php	
+				  	}
+				  	?>
 				  	<li><a href="#">Video</a></li>
 				  	<li><a href="#">Epaper</a></li>
-				  	<li><a href="#">Buy & Sell</a></li> 
+				  	<!--<li><a href="#">Buy & Sell</a></li> -->
 				</ul> 
 			</nav>
       	</div>  <!-- menu-header end -->	  
