@@ -1,7 +1,7 @@
 <footer class="container">
     <div class="footer">
 	    <div class="footer-col">
-		   	<h2><a href="#">New Zealand</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(1); ?>">New Zealand</a></h2> 
 		   	<?php
 			if(count($latest_newzealand_footer_data) > 0){
 			?>
@@ -19,7 +19,7 @@
 		   	?>
 		</div>
 		<div class="footer-col">
-		   	<h2><a href="#">Sports</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(5); ?>">Sports</a></h2> 
 		   	<?php
 			if(count($latest_sports_footer_data) > 0){
 			?>
@@ -37,7 +37,7 @@
 		   	?>
 		</div>
 		<div class="footer-col">
-		   	<h2><a href="#">World</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(4); ?>">World</a></h2> 
 		   	<?php
 			if(count($latest_world_footer_data) > 0){
 			?>
@@ -55,7 +55,7 @@
 		   	?>
 		</div>
 		<div class="footer-col">
-		   	<h2><a href="#">Gujarat</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(3); ?>">Gujarat</a></h2> 
 		   	<?php
 			if(count($latest_gujarat_footer_data) > 0){
 			?>
@@ -73,7 +73,7 @@
 		   	?>
 		</div>
 		<div class="footer-col">
-		   	<h2><a href="#">Bollywood</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(6); ?>">Bollywood</a></h2> 
 		   	<?php
 			if(count($latest_bollywood_footer_data) > 0){
 			?>
@@ -91,7 +91,7 @@
 		   	?>
 		</div>
 		<div class="footer-col">
-		   	<h2><a href="#">India</a></h2> 
+		   	<h2><a href="<?php echo $this->Common->get_listing_url(2); ?>">India</a></h2> 
 		   	<?php
 			if(count($latest_india_footer_data) > 0){
 			?>

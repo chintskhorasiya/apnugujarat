@@ -158,7 +158,7 @@ if(count($latest_newzealand_homepage_data) > 0){
 ?>
 <section class="main sec-part2"> <!-- sec-part2 start -->
    	<div class="container"> 
-        <h2 class="main-title green">New Zealand</h2>
+        <a href="<?php echo $this->Common->get_listing_url(1); ?>"><h2 class="main-title green">New Zealand</h2></a>
 		<span class="green-border"></span>
 	   	<div class="clear"></div>
 	   	<?php
@@ -224,7 +224,7 @@ $last_latest_aus_num = count($latest_australlia_homepage_data)-1;
 <section class="main sec-part3"> <!-- sec-part3 start -->
    	<div class="container">  
 	   	<div class="left-part"> <!-- left-part start -->
-	      	<h2 class="main-title dark-blue">Australia</h2>
+	      	<a href="<?php echo $this->Common->get_listing_url(7); ?>"><h2 class="main-title dark-blue">Australia</h2></a>
 		  	<span class="dark-blue-border"></span>
 	      	<div class="clear"></div>
 	       	<?php
@@ -292,7 +292,7 @@ $last_latest_aus_num = count($latest_australlia_homepage_data)-1;
            	<div class="clear"></div>
 	   	</div> <!-- left-part end -->
 	   	<div class="right-part"> <!-- right-part start -->
-         	<h2 class="main-title violet">World</h2>
+         	<a href="<?php echo $this->Common->get_listing_url(4); ?>"><h2 class="main-title violet">World</h2></a>
 	     	<span class="violet-border"></span>
          	<div class="clear"></div> 
          	<?php
@@ -330,7 +330,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 <section class="main sec-part4"> <!-- sec-part4 start -->
    	<div class="container">  
 	   	<div class="left-part"> <!-- left-part start -->
-	      	<h2 class="main-title black">Gujarat</h2>
+	      	<a href="<?php echo $this->Common->get_listing_url(3); ?>"><h2 class="main-title black">Gujarat</h2></a>
 		  	<span class="black-border"></span>
 	      	<div class="clear"></div>
 	       	<?php
@@ -395,7 +395,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 <section class="main sec-part5"> <!-- sec-part5 start -->
    	<div class="container">  
 	   	<div class="left-part sports"> <!-- left-part start -->
-	      	<h2 class="main-title pink">Sports</h2>
+	      	<a href="<?php echo $this->Common->get_listing_url(5); ?>"><h2 class="main-title pink">Sports</h2></a>
 		  	<span class="pink-border"></span>
 	      	<div class="clear"></div>
 	      	<?php
@@ -465,7 +465,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 			if(count($latest_bollywood_homepage_data) > 0){
 			$last_bollywood_sports_num = count($latest_bollywood_homepage_data)-1;
 			?>
-	      	<h2 class="main-title red">Bollywood</h2>
+	      	<a href="<?php echo $this->Common->get_listing_url(6); ?>"><h2 class="main-title red">Bollywood</h2></a>
 		  	<span class="red-border"></span>
 	      	<div class="clear"></div>
 	      	<div id="bollymyCarousel" class="carousel slide" data-ride="carousel">
@@ -502,7 +502,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 			$last_columns_num = count($latest_columns_homepage_data)-1;
 			?>
 		   	<div class="column"> <!-- column start -->
-			  	<h2 class="main-title magenta-blue">Writers Column </h2>
+			  	<a href="<?php echo $this->Common->get_listing_url(8); ?>"><h2 class="main-title magenta-blue">Writers Column </h2></a>
 			  	<span class="magenta-blue-border"></span>
 			  	<div class="clear"></div> 
 			    <div class="row">
@@ -533,7 +533,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 			if(count($latest_india_homepage_data) > 0){
 			$last_india_num = count($latest_india_homepage_data)-1;
 			?>
-	        <h2 class="main-title violet">India</h2>
+	        <a href="<?php echo $this->Common->get_listing_url(2); ?>"><h2 class="main-title violet">India</h2></a>
 		    <span class="violet-border"></span>
 	        <div class="clear"></div> 
 	          	<div class="gray-bg">
