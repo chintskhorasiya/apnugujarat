@@ -68,6 +68,19 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-tags"></i><span>Videos</span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Video</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>Videos</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- sidebar menu end-->

@@ -138,6 +138,26 @@ class AppController extends Controller {
         }
         // for front footer data
 
+        // for ads
+        $this->loadmodel('Advertise');
+        $ads_home_top_left_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'home_top_left')));
+        $this->set('ads_home_top_left_data', $ads_home_top_left_data);
+        $ads_home_top_right_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'home_top_right')));
+        $this->set('ads_home_top_right_data', $ads_home_top_right_data);
+        $ads_home_latest_bottom_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'home_latest_bottom')));
+        $this->set('ads_home_latest_bottom_data', $ads_home_latest_bottom_data);
+        $ads_home_rightbar_first_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'home_rightbar_first')));
+        $this->set('ads_home_rightbar_first_data', $ads_home_rightbar_first_data);
+        $ads_home_rightbar_second_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'home_rightbar_second')));
+        $this->set('ads_home_rightbar_second_data', $ads_home_rightbar_second_data);
+        $ads_category_page_rightbar_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'category_page_rightbar')));
+        $this->set('ads_category_page_rightbar_data', $ads_category_page_rightbar_data);
+        $ads_detail_page_rightbar_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'detail_page_rightbar')));
+        $this->set('ads_detail_page_rightbar_data', $ads_detail_page_rightbar_data);
+        $ads_detail_page_latest_bottom_data = $this->Advertise->find('first', array('conditions' => array('status IN'=> array(1), 'position'=>'detail_page_latest_bottom')));
+        $this->set('ads_detail_page_latest_bottom_data', $ads_detail_page_latest_bottom_data);
+        // for ads
+
         if($this->params['controller'] == "front") {
             $this->set_title($pagenames, $this->params['pass']);
         } else {

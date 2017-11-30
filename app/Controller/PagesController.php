@@ -90,7 +90,7 @@ class PagesController extends AppController
 			$insert_page_data_array['Page']['title'] = '';
 			$insert_page_data_array['Page']['slug'] = '';
 			$insert_page_data_array['Page']['content'] = '';
-			$insert_page_data_array['Page']['status'] = '0';
+			$insert_page_data_array['Page']['status'] = '1';
 			$this->set('page_data',$insert_page_data_array);
 		}
 

@@ -208,7 +208,7 @@ class NewsController extends AppController
 			$insert_news_data_array['News']['title'] = '';
 			$insert_news_data_array['News']['slug'] = '';
 			$insert_news_data_array['News']['content'] = '';
-			$insert_news_data_array['News']['status'] = '0';
+			$insert_news_data_array['News']['status'] = '1';
 			
 			$this->loadmodel('NewsCategory');
 			$news_categories_data = $this->NewsCategory->find('all', array('conditions' => array('status IN'=> array(0,1))));

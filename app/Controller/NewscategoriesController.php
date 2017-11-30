@@ -100,7 +100,7 @@ class NewscategoriesController extends AppController
 			$insert_category_data_array['NewsCategory']['title'] = '';
 			$insert_category_data_array['NewsCategory']['slug'] = '';
 			$insert_category_data_array['NewsCategory']['content'] = '';
-			$insert_category_data_array['NewsCategory']['status'] = '0';
+			$insert_category_data_array['NewsCategory']['status'] = '1';
 			$this->set('category_data',$insert_category_data_array);
 		}
 

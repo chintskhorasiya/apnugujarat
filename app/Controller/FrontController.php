@@ -122,6 +122,10 @@ class FrontController extends AppController
         }
         $this->set('latest_india_homepage_data', $latest_india_homepage_data);
 
+        $this->loadmodel('Video');
+        $latest_videos_homepage_data = $this->Video->find('all', array('conditions' => array('status IN'=> array(1)), 'limit' => 3, 'order' => array('id' => 'desc')));
+        $this->set('latest_videos_homepage_data', $latest_videos_homepage_data);
+
     	// footer queries
 
     	/*$latest_newzealand_footer_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'1\',categories)'), 'limit' => 4, 'order' => array('id' => 'desc')));

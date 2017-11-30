@@ -88,7 +88,7 @@ class AdvertisesController extends AppController
 			$insert_ads_data_array['Advertise']['title'] = '';
 			$insert_ads_data_array['Advertise']['slug'] = '';
 			$insert_ads_data_array['Advertise']['content'] = '';
-			$insert_ads_data_array['Advertise']['status'] = '0';
+			$insert_ads_data_array['Advertise']['status'] = '1';
 			$this->set('ads_data',$insert_ads_data_array);
 		}
 

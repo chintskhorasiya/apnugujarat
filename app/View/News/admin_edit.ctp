@@ -121,6 +121,7 @@
                                     ?>
                                     <div class="form-group col-md-12 padding-left-o">
                                         <label>Videos</label>
+                                        <p>(e.g. https://www.youtube.com/watch?v=n0hvKL6V3AI OR http://youtu.be/-wtIMTCHWuI etc)</p>
                                         <?php
                                         $add_videos = $news_data['News']['videos'];
                                         if(!empty($add_videos))

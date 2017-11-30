@@ -229,7 +229,7 @@ ul.list li a{    font-weight: bold;font-family: "gujlekha" !important;font-weigh
 #innermyCarousel .carousel-inner .item img {height:447px;width: 100%;}
 .details-listing-part .left-part {background: #fff;width: 70.6%;}
 .details-listing-part{background: #eee;padding: 21px 0px;}
-.inner-list-dec {padding:15px;line-height: 25px;}
+.inner-list-dec {padding:15px;line-height: 25px;word-wrap: break-word;}
 .inner-list-dec h1{font-size:23px;line-height: 36px; color: #000;font-weight: bold;margin: 0px 0px 9px;}
 .breadcrumb {margin: 0px;font-size: 13px;font-family: "gujlekha" !important;background-color: #f5f5f5;font-weight: normal !important;}
 .br-arrow {padding: 0px 4px;}
@@ -289,3 +289,5 @@ ul.list li a{    font-weight: bold;font-family: "gujlekha" !important;font-weigh
 .e-paper-listing{ margin:0px auto 25px;}
 .e-paper-listing .news-b {float:left;position:relative;padding:0px 0px;margin:7px 5px;width:24%;}
 .e-paper-listing .news-b h3 {text-align: center;font-size: 20px; padding:34% 0.75rem 7.75rem 0.95rem !important;}
+
+.list-dec{word-wrap: break-word;}

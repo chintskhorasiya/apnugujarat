@@ -141,9 +141,16 @@ echo $this->element('frontheader');
        			}
        		}
        		?>
-         	<div class="adv5">
-            	<img src="<?=DEFAULT_URL?>img/adv5.jpg" alt="" />
-         	</div>	
+         	<?php
+ 		  	if($ads_category_page_rightbar_data)
+ 		  	{
+ 		  		if(!empty($ads_category_page_rightbar_data['Advertise']['source'])){
+ 		  		?>
+ 		  		<div class="adv5"><a target="_blank" href="<?=$ads_category_page_rightbar_data['Advertise']['link']?>"><img src="<?=$ads_category_page_rightbar_data['Advertise']['source']?>" alt="<?=$ads_category_page_rightbar_data['Advertise']['title']?>" /></a></div>
+ 		  		<?php
+ 		  		}
+ 		  	}
+ 		  	?> 	
             <br/>			 
 	   	</div> <!-- right-part end -->  
 	    <div class="clear"></div>

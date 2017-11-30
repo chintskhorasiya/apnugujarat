@@ -149,11 +149,18 @@ echo $this->element('frontheader');
 			<div class="inner-list-dec">
 			    <p class="dba_pdate">Last Modified - <?php echo $news_page_modified; //date('M d, Y, g:i A', $news_page_modified); ?></p>
 				<h1><?=$news_page_title?></h1>
-				<?php echo $news_page_content; ?>
+				<div><?php echo $news_page_content; ?></div>
 			</div>	
-           	<div class="adv6">
-                <img src="<?=DEFAULT_URL?>img/adv6.jpg" alt="" />
-           	</div>
+           	<?php
+ 		  	if($ads_detail_page_latest_bottom_data)
+ 		  	{
+ 		  		if(!empty($ads_detail_page_latest_bottom_data['Advertise']['source'])){
+ 		  		?>
+ 		  		<div class="adv6"><a target="_blank" href="<?=$ads_detail_page_latest_bottom_data['Advertise']['link']?>"><img src="<?=$ads_detail_page_latest_bottom_data['Advertise']['source']?>" alt="<?=$ads_detail_page_latest_bottom_data['Advertise']['title']?>" /></a></div>
+ 		  		<?php
+ 		  		}
+ 		  	}
+ 		  	?>
            	<div class="clear"></div>
 
            	<div class="col-md-12 cat-list-grid">
@@ -241,9 +248,16 @@ echo $this->element('frontheader');
        			}
        		}
        		?>
-         	<div class="adv5">
-            	<img src="<?=DEFAULT_URL?>img/adv5.jpg" alt="" />
-         	</div>	
+         	<?php
+ 		  	if($ads_detail_page_rightbar_data)
+ 		  	{
+ 		  		if(!empty($ads_detail_page_rightbar_data['Advertise']['source'])){
+ 		  		?>
+ 		  		<div class="adv5"><a target="_blank" href="<?=$ads_detail_page_rightbar_data['Advertise']['link']?>"><img src="<?=$ads_detail_page_rightbar_data['Advertise']['source']?>" alt="<?=$ads_detail_page_rightbar_data['Advertise']['title']?>" /></a></div>
+ 		  		<?php
+ 		  		}
+ 		  	}
+ 		  	?> 		
             <br/>
             <h2 class="main-title violet">India</h2>
 		    <span class="violet-border"></span>

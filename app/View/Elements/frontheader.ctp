@@ -22,9 +22,27 @@
       	</div> <!-- top header end -->
 
       	<div class="logo-header"> <!-- logo header start --> 
- 		  	<div class="adv1"><a href="#"><img src="<?=DEFAULT_URL?>img/adv1.jpg" alt="" /></a></div>
+ 		  	<?php
+ 		  	if($ads_home_top_left_data)
+ 		  	{
+ 		  		if(!empty($ads_home_top_left_data['Advertise']['source'])){
+ 		  		?>
+ 		  		<div class="adv1"><a target="_blank" href="<?=$ads_home_top_left_data['Advertise']['link']?>"><img src="<?=$ads_home_top_left_data['Advertise']['source']?>" alt="<?=$ads_home_top_left_data['Advertise']['title']?>" /></a></div>
+ 		  		<?php
+ 		  		}
+ 		  	}
+ 		  	?>
 		  	<div class="logo"><a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/logo.png" alt="logo" /></a></div>
-		  	<div class="adv2"><a href="#"><img src="<?=DEFAULT_URL?>img/adv2.jpg" alt="" /></a></div> 
+		  	<?php
+ 		  	if($ads_home_top_right_data)
+ 		  	{
+ 		  		if(!empty($ads_home_top_right_data['Advertise']['source'])){
+ 		  		?>
+ 		  		<div class="adv2"><a target="_blank" href="<?=$ads_home_top_right_data['Advertise']['link']?>"><img src="<?=$ads_home_top_right_data['Advertise']['source']?>" alt="<?=$ads_home_top_right_data['Advertise']['title']?>" /></a></div>
+ 		  		<?php
+ 		  		}
+ 		  	}
+ 		  	?> 
 		   	<div class="clear"></div>
 	  	</div> <!-- logo header end -->
 	  
