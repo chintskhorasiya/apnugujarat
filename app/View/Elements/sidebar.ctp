@@ -55,6 +55,19 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-tags"></i><span>Advertisements</span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Advertisement</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Advertisements</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- sidebar menu end-->

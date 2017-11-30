@@ -87,7 +87,7 @@
                                     ?>
                                     <div class="form-group col-md-12 padding-left-o">
                                         <label>Videos</label>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 you-video-area">
                                             <input type="text" name="data[News][videos][]" class="form-control" value="" placeholder="Paste Video URL here" />
                                             <input type="button" class="remove-video-btn btn btn-info" value="Remove">
                                         </div>
@@ -121,12 +121,14 @@
                                     ?>
                                     <hr>
 
+                                    <div class="submit-area">
                                     <?php
 
                                     echo $this->Form->submit('Submit', array('class' => 'btn btn-info'));
                                     echo $this->Html->link('Cancel', DEFAULT_ADMINURL.'news/lists', array('class' => 'btn btn-info'));
                                     
                                     ?>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -137,7 +139,7 @@
         <script type="text/javascript">
         jQuery('.add-video-btn').click(function(){
             //console.log(jQuery(this).parent());
-            jQuery(this).before('<div class="col-md-12"><input type="text" name="data[News][videos][]" class="form-control" value="" placeholder="Paste Video URL here" /><input type="button" class="remove-video-btn btn btn-info" value="Remove"></div>');
+            jQuery(this).before('<div class="col-md-12 you-video-area"><input type="text" name="data[News][videos][]" class="form-control" value="" placeholder="Paste Video URL here" /><input type="button" class="remove-video-btn btn btn-info" value="Remove"></div>');
         })
         jQuery(function(){
             jQuery('body').on('click', '.remove-video-btn', function () {

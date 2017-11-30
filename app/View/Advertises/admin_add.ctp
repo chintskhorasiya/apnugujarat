@@ -42,47 +42,41 @@
                         }
                         ?>
                         <section class="panel  border-o">
-                            <header class="panel-heading btn-primary">Edit Page</header>
+                            <header class="panel-heading btn-primary">Add Advertise</header>
                             <div class="panel-body">
                                 <div class="position-center">
                                     <?php
-                                    echo $this->Form->create('Page', array('novalidate'));
+                                    echo $this->Form->create('Advertise', array('novalidate', 'type'=>'file'));
                                     
-                                    echo $this->Form->input('title', array('class' => 'form-control input-lg', 'value' => $page_data['Page']['title']));
+                                    echo $this->Form->input('title', array('class' => 'form-control input-lg'));
 
-                                    echo $this->Form->input('slug', array('class' => 'form-control input-lg', 'value' => $page_data['Page']['slug']));
-                                    
-                                    //echo $this->Form->input('content', array('rows' => '10', 'class' => 'form-control input-lg'));
+                                    echo $this->Form->input('source', array('type' => 'file', 'label'=>'Image'));
 
-                                    echo $this->Tinymce->input('Page.content', array(
-                                                'label' => 'Content',
-                                                'class' => 'tinymce-textarea form-control input-lg', 'value' => $page_data['Page']['content']
-                                                ),array(
-                                                        'language'=>'en'
-                                                ),
-                                                'bbcode'
-                                    );
+                                    echo $this->Form->input('link', array('class' => 'form-control input-lg', 'label'=>'External Link (e.g http://vtvgujarati.com/)'));
 
-                                    //var_dump($page_data['Page']['status']);exit;
+                                    $options = array('home_top_left'=>'home_top_left','home_top_right'=>'home_top_right','home_rightbar_first'=>'home_rightbar_first','home_rightbar_second'=>'home_rightbar_second','category_page_rightbar'=>'category_page_rightbar','detail_page_rightbar'=>'detail_page_rightbar');
+                                    $selected = array();
+
+                                    echo $this->Form->input('position', array('label'=>'Position','class' => 'form-control', 'options' => $options, 'selected' => $selected));
                                     ?>
                                     <div class="form-group col-md-12 padding-left-o">
                                         <label>Status</label>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="data[Page][status]" class="form-control-radio" value="1" <?php if($page_data['Page']['status'] == "1"){ echo 'checked="checked"'; } ?> />Published
+                                                <input type="radio" name="data[Advertise][status]" class="form-control-radio" value="1" <?php if($ads_data['Advertise']['status'] == "1"){ echo 'checked="checked"'; } ?> />Published
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="data[Page][status]" class="form-control-radio" value="0" <?php if($page_data['Page']['status'] == "0"){ echo 'checked="checked"'; } ?> />Draft
+                                                <input type="radio" name="data[Advertise][status]" class="form-control-radio" value="0" <?php if($ads_data['Advertise']['status'] == "0"){ echo 'checked="checked"'; } ?> />Draft
                                             </label>
                                         </div>
                                     </div>
                                     <div class="submit-area">
                                     <?php
                                     echo $this->Form->submit('Submit', array('class' => 'btn btn-info'));
-                                    
-                                    echo $this->Html->link('Cancel', DEFAULT_ADMINURL.'pages/lists', array('class' => 'btn btn-info'));
+
+                                    echo $this->Html->link('Cancel', DEFAULT_ADMINURL.'advertises/lists', array('class' => 'btn btn-info'));
                                     ?>
                                     </div>
                                 </div>

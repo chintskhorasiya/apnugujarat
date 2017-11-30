@@ -67,13 +67,13 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="submit-area">
                                     <?php
-
                                     echo $this->Form->submit('Submit', array('class' => 'btn btn-info'));
 
                                     echo $this->Html->link('Cancel', DEFAULT_ADMINURL.'newscategories/lists', array('class' => 'btn btn-info'));
-                                    
                                     ?>
+                                    </div>
                                 </div>
                             </div>
                         </section>

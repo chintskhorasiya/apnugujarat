@@ -42,7 +42,7 @@ class AppController extends Controller {
 
     function beforeFilter() {
 
-        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news")
+        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises")
         {
             $this->checklogin();
         }
