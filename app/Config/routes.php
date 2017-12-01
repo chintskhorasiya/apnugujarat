@@ -42,6 +42,16 @@
 	    array('controller' => 'front', 'action' => 'news_detail')
 	);
 
+	Router::connect(
+	    '/videos/*',
+	    array('controller' => 'front', 'action' => 'videos_listing')
+	);
+
+	Router::connect(
+	    '/video/*',
+	    array('controller' => 'front', 'action' => 'video_detail')
+	);
+
     /*Router::connect(
 	    '/admin',
 	    array('controller' => 'users')

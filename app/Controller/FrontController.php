@@ -295,4 +295,86 @@ class FrontController extends AppController
         $this->set('cms_page_content', $cms_page_content);
     }
 
+    public function videos_listing(){
+        $this->loadmodel('Video');
+        $this->loadmodel('News');
+
+        $this->paginate = array(
+            'conditions' => array('status IN'=> array(1)),
+            'limit' => 2,
+            'order' => array('id' => 'desc')
+        );
+
+        $videos_data = $this->paginate('Video');
+
+        //$this->pre($videos_data);exit;
+
+        $get_sidebarupr_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 7, 'order' => array('id' => 'desc')));
+        //$this->pre($get_morenews_data_by_category);exit;
+        $sidebarupr_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>3)));
+        foreach ($get_sidebarupr_data_by_category as $sidebarupr_key => $sidebarupr_data)
+        {
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_id'] = $sidebarupr_catdata['NewsCategory']['id'];
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_name'] = $sidebarupr_catdata['NewsCategory']['name'];
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_slug'] = $sidebarupr_catdata['NewsCategory']['slug'];
+        }
+
+        $this->set('videos_data',$videos_data);
+        $this->set('news_page_sidebarupr', $get_sidebarupr_data_by_category);      
+    }
+
+    public function video_detail($slug)
+    {
+        $this->loadmodel('Video');
+
+        $get_video_data_by_slug = $this->Video->find('first', array('conditions' => array('status IN'=> array(1), 'slug'=>$slug)));
+
+        if(!empty($get_video_data_by_slug['Video']['video']))
+        {
+            $video_page_id = $get_video_data_by_slug['Video']['id'];
+            $video_page_content = $get_video_data_by_slug['Video']['content'];
+            $video_page_title = $get_video_data_by_slug['Video']['title'];
+            $video_page_video = $get_video_data_by_slug['Video']['video'];
+            $video_page_modified = $get_video_data_by_slug['Video']['modified'];
+        } else {
+            $video_page_id = '';
+            $video_page_content = '';
+            $video_page_title = '';
+            $video_page_images = '';
+            $video_page_video = '';
+            $video_page_modified = '';
+        }
+
+        $get_morevideos_data = $this->Video->find('all', array('conditions' => array('status IN'=> array(1), 'id NOT IN'=>array($video_page_id)), 'limit' => 10, 'order' => array('id' => 'desc')) );
+
+        $get_sidebarupr_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 7, 'order' => array('id' => 'desc')));
+        //$this->pre($get_morenews_data_by_category);exit;
+        $sidebarupr_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>3)));
+        foreach ($get_sidebarupr_data_by_category as $sidebarupr_key => $sidebarupr_data)
+        {
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_id'] = $sidebarupr_catdata['NewsCategory']['id'];
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_name'] = $sidebarupr_catdata['NewsCategory']['name'];
+            $get_sidebarupr_data_by_category[$sidebarupr_key]['News']['cat_slug'] = $sidebarupr_catdata['NewsCategory']['slug'];
+        }
+
+        $get_sidebardown_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'2\',categories)'), 'limit' => 7, 'order' => array('id' => 'desc')));
+        //$this->pre($get_morenews_data_by_category);exit;
+        $sidebardown_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>2)));
+        foreach ($get_sidebardown_data_by_category as $sidebardown_key => $sidebardown_data)
+        {
+            $get_sidebardown_data_by_category[$sidebardown_key]['News']['cat_id'] = $sidebardown_catdata['NewsCategory']['id'];
+            $get_sidebardown_data_by_category[$sidebardown_key]['News']['cat_name'] = $sidebardown_catdata['NewsCategory']['name'];
+            $get_sidebardown_data_by_category[$sidebardown_key]['News']['cat_slug'] = $sidebardown_catdata['NewsCategory']['slug'];
+        }
+
+        $this->set('video_page_title', $video_page_title);
+        $this->set('video_page_video', $video_page_video);
+        $this->set('video_page_content', $video_page_content);
+        $this->set('video_page_modified', $video_page_modified);
+        $this->set('video_page_morevideos', $get_morevideos_data);
+        $this->set('news_page_sidebarupr', $get_sidebarupr_data_by_category);
+        $this->set('news_page_sidebardown', $get_sidebardown_data_by_category);
+
+    }
+
 }

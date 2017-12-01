@@ -55,7 +55,7 @@ class AppController extends Controller {
 
         //$this->pre($this->params);
 
-        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news")
+        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises" || $this->params['controller'] == "videos")
         {
             $pagenames = $this->params['controller'].'/'.$this->params['action'];
         }
@@ -168,7 +168,7 @@ class AppController extends Controller {
         $this->set('encrypt_id',$encrypt_id);
     }
 
-    function set_title($pagenames, $params) {
+    function set_title($pagenames, $params='') {
         //echo $pagenames;
         //var_dump($params);
         $dynamic_name = '';
@@ -188,6 +188,16 @@ class AppController extends Controller {
             if(!empty($news_data['News']['title']))
             {
                 $dynamic_name .= ' - '.$news_data['News']['title'];
+            }
+        }
+        if($pagenames == "video_detail")
+        {
+            $this->loadmodel('Video');
+            $video_data = $this->Video->find('first', array('conditions' => array('status IN'=> array(1), 'slug'=>$params[0])));
+            //$this->pre($news_data);
+            if(!empty($video_data['Video']['title']))
+            {
+                $dynamic_name .= 'Video - '.$video_data['Video']['title'];
             }
         }
 
@@ -210,7 +220,15 @@ class AppController extends Controller {
             'news/admin_search'=>'Searched News List',
             'home'=>'Home page',
             'news_detail'=>$dynamic_name,
-            'news_listing'=>$dynamic_name
+            'news_listing'=>$dynamic_name,
+            'advertises/admin_add'=>'Add Advertise',
+            'advertises/admin_lists'=>'Advertises List',
+            'advertises/admin_edit'=>'Edit Advertise',
+            'videos/admin_lists'=>'Videos List',
+            'videos/admin_add'=>'Add Video',
+            'videos/admin_edit'=>'Edit Video',
+            'videos_listing'=>'Videos',
+            'video_detail'=>$dynamic_name
         );
 //
         //echo $title_arr[$pagenames];

@@ -65,7 +65,7 @@
 				  		<?php	
 				  	}
 				  	?>
-				  	<li><a href="#">Video</a></li>
+				  	<li><a href="<?=DEFAULT_URL.'videos'?>">Video</a></li>
 				  	<li><a href="#">Epaper</a></li>
 				  	<!--<li><a href="#">Buy & Sell</a></li> -->
 				</ul> 

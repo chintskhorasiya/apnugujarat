@@ -521,7 +521,7 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 				    }
 				});
 			</script>
-	        <h2 class="main-title yellow">Videos</h2>
+	        <a href="<?=DEFAULT_URL.'videos'?>"><h2 class="main-title yellow">Videos</h2></a>
 		    <span class="yellow-border"></span>
 	        <div class="clear"></div> 
 	        <div id="videomyCarousel" class="carousel slide" data-ride="carousel">
