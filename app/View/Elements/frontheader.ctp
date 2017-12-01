@@ -4,7 +4,7 @@
    	<div class="container">
       	<div class="top-header"> <!-- top header start -->
 	     	<div class="e-paper">
-		    	<a href="#"><img src="<?=DEFAULT_URL?>img/e-paper.png" alt="" /></a>
+		    	<a href="<?=DEFAULT_FRONT_EPAPERS_URL?>"><img src="<?=DEFAULT_URL?>img/e-paper.png" alt="" /></a>
 		 	</div>
 		  	<div class="search-box">
 		      	<form action="">
@@ -66,7 +66,7 @@
 				  	}
 				  	?>
 				  	<li><a href="<?=DEFAULT_URL.'videos'?>">Video</a></li>
-				  	<li><a href="#">Epaper</a></li>
+				  	<li><a href="<?=DEFAULT_FRONT_EPAPERS_URL?>">Epaper</a></li>
 				  	<!--<li><a href="#">Buy & Sell</a></li> -->
 				</ul> 
 			</nav>

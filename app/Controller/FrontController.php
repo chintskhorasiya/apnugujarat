@@ -377,4 +377,37 @@ class FrontController extends AppController
 
     }
 
+    public function epapers(){
+        //echo "epapers";
+    }
+
+    public function epapers_listing($cat_slug){
+        //echo "epapers ".$cat_slug;
+
+        if($cat_slug == "aus"){
+            $category = 1;
+            $category_name = "Australia";
+            $category_image = DEFAULT_FRONT_EPAPERS_AUS_IMG_URL;
+        } else {
+            $category = 0;
+            $category_name = "New Zealand";            
+            $category_image = DEFAULT_FRONT_EPAPERS_NZ_IMG_URL;
+        }
+
+        $this->loadmodel('Epaper');
+
+        $this->paginate = array(
+            'conditions' => array('status IN'=> array(1), 'category IN'=>array($category)),
+            'limit' => 8,
+            'order' => array('id' => 'desc')
+        );
+
+        $get_epapers_data = $this->paginate('Epaper');
+
+        //$this->pre($get_epapers_data);exit;
+        $this->set('category_name', $category_name);
+        $this->set('category_image', $category_image);
+        $this->set('epapers_data', $get_epapers_data);
+    }
+
 }

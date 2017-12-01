@@ -52,6 +52,16 @@
 	    array('controller' => 'front', 'action' => 'video_detail')
 	);
 
+	Router::connect(
+	    '/epapers/*',
+	    array('controller' => 'front', 'action' => 'epapers')
+	);
+
+	Router::connect(
+	    '/epapers-listing/*',
+	    array('controller' => 'front', 'action' => 'epapers_listing')
+	);
+
     /*Router::connect(
 	    '/admin',
 	    array('controller' => 'users')

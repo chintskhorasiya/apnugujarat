@@ -81,6 +81,19 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sub-menu">
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-tags"></i><span>E-Papers</span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add E-Paper</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View E-Papers</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- sidebar menu end-->
