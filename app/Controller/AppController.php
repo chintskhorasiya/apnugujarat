@@ -42,7 +42,7 @@ class AppController extends Controller {
 
     function beforeFilter() {
 
-        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises" || $this->params['controller'] == "videos" || $this->params['controller'] == "epapers")
+        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises" || $this->params['controller'] == "videos" || $this->params['controller'] == "epapers" || $this->params['controller'] == "settings")
         {
             $this->checklogin();
         }
@@ -55,7 +55,7 @@ class AppController extends Controller {
 
         //$this->pre($this->params);
 
-        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises" || $this->params['controller'] == "videos" || $this->params['controller'] == "epapers")
+        if($this->params['controller'] == "pages" || $this->params['controller'] == "newscategories" || $this->params['controller'] == "news" || $this->params['controller'] == "advertises" || $this->params['controller'] == "videos" || $this->params['controller'] == "epapers" || $this->params['controller'] == "settings")
         {
             $pagenames = $this->params['controller'].'/'.$this->params['action'];
         }
@@ -156,6 +156,31 @@ class AppController extends Controller {
             $this->set('ads_detail_page_latest_bottom_data', $ads_detail_page_latest_bottom_data);
             // for ads
 
+            // for social links
+            $this->loadmodel('Setting');
+            $GeneralSettingsData = $this->Setting->find('all', array('conditions'=>array('status'=>1), 'order' => 'id DESC'));
+
+            if(!empty($GeneralSettingsData)){
+                $social_data = array();
+                foreach ($GeneralSettingsData as $g_setting_num => $g_setting_data)
+                {
+                    if(!empty($g_setting_data['Setting']['key']))
+                    {
+                        $social_data[$g_setting_data['Setting']['key']] = $g_setting_data['Setting']['value'];
+                    }
+                }
+            } else {
+                $social_data = array();
+                $social_data['facebook'] = '';
+                $social_data['google'] = '';
+                $social_data['youtube'] = '';
+                $social_data['twitter'] = '';
+            }
+
+            //$this->pre($social_data);exit;
+            $this->set('social_data', $social_data);
+            // for social links
+
         }
         // for front footer data
         
@@ -247,7 +272,9 @@ class AppController extends Controller {
             'epapers/admin_add'=>'Add E-Paper',
             'epapers/admin_edit'=>'Edit E-Paper',
             'epapers'=>'E-Papers',
-            'epapers_listing'=>$dynamic_name
+            'epapers_listing'=>$dynamic_name,
+            'news_search_results'=>'News Search Results',
+            'settings/admin_general'=>'General Settings'
         );
 //
         //echo $title_arr[$pagenames];

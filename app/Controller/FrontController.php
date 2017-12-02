@@ -173,7 +173,7 @@ class FrontController extends AppController
                 $get_catenews_data_by_category[$catenews_key]['News']['cat_slug'] = $catenews_catdata['NewsCategory']['slug'];
             }
 
-            $get_sidebarupr_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 7, 'order' => array('id' => 'desc')));
+            $get_sidebarupr_data_by_category = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'3\',categories)'), 'limit' => 5, 'order' => array('id' => 'desc')));
             //$this->pre($get_morenews_data_by_category);exit;
             $sidebarupr_catdata = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>3)));
             foreach ($get_sidebarupr_data_by_category as $sidebarupr_key => $sidebarupr_data)
@@ -190,6 +190,7 @@ class FrontController extends AppController
 
         //$this->pre($category_title);
         //$this->pre($get_catenews_data_by_category);
+        $this->set('category_id', $category_id);
         $this->set('category_title', $category_title);
         $this->set('category_news_data', $get_catenews_data_by_category);
         $this->set('news_page_sidebarupr', $get_sidebarupr_data_by_category);
@@ -266,6 +267,7 @@ class FrontController extends AppController
             $get_sidebardown_data_by_category = array();
         }
 
+        $this->set('category_id', $category_id);
         $this->set('category_title', $category_title);
         $this->set('news_page_title', $news_page_title);
         $this->set('news_page_images', $news_page_images);

@@ -42,8 +42,9 @@ class Advertise extends AppModel {
         ),
         'link' => array(
             'url' => array(
-                'rule' => 'url',
-                'message' => 'Please enter valid URL'
+                'rule' => '/^(http|https):\\/\\/[a-z0-9]+([\\-\\.]{1}[a-z0-9]+)*\\.[a-z]{2,5}((:[0-9]{1,5})?\\/.*)?$/i',
+                //'rule'=>'/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i',
+                'message' => 'Please enter valid URL e.g (http://site.com, https://site.com, http://www.site.com)'
             )
         )
     );

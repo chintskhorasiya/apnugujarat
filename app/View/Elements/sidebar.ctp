@@ -100,6 +100,9 @@
                         </a>
                         <ul class="sub">
                             <li>
+                                <a href="<?php echo DEFAULT_ADMINURL.'settings/general' ?>"><i class=" fa fa-wrench"></i>General</a>
+                            </li>
+                            <li>
                                 <a href="<?php echo DEFAULT_ADMINURL.'users/change_password' ?>"><i class=" fa fa-suitcase"></i>Change Password</a>
                             </li>
                         </ul>

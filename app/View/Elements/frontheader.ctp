@@ -7,15 +7,25 @@
 		    	<a href="<?=DEFAULT_FRONT_EPAPERS_URL?>"><img src="<?=DEFAULT_URL?>img/e-paper.png" alt="" /></a>
 		 	</div>
 		  	<div class="search-box">
+		  		<?php
+		  		if($this->Session->read('front_search_news_key') != "" && $from_search)
+				{
+				   $search_key = $this->Session->read('front_search_news_key');
+				}
+				else
+				{
+				   $search_key = "";
+				}
+		  		?>
 		      	<form action="<?=DEFAULT_FRONT_NEWS_SEARCH_RESULTS_URL?>" method="POST">
-					<input type="text" name="search_query" id="search_query" placeholder="search"> 
+					<input type="text" name="search_query" id="search_query" value="<?=$search_key?>" placeholder="search">
 			  	</form>
 		  	</div>  
 		 	<div class="social">
-			 	<a href="#" target="_blank"><img src="<?=DEFAULT_URL?>img/facebook.png" alt="facebook" /></a>
-			 	<a href="#" target="_blank"><img src="<?=DEFAULT_URL?>img/twitter.png" alt="twitter" /></a>
-			 	<a href="#" target="_blank"><img src="<?=DEFAULT_URL?>img/you-tube.png" alt="you-tube" /></a>
-			 	<a href="#" target="_blank"><img src="<?=DEFAULT_URL?>img/google.png" alt="google" /></a>
+			 	<a href="<?=$social_data['facebook'];?>" target="_blank"><img src="<?=DEFAULT_URL?>img/facebook.png" alt="facebook" /></a>
+			 	<a href="<?=$social_data['twitter'];?>" target="_blank"><img src="<?=DEFAULT_URL?>img/twitter.png" alt="twitter" /></a>
+			 	<a href="<?=$social_data['youtube'];?>" target="_blank"><img src="<?=DEFAULT_URL?>img/you-tube.png" alt="you-tube" /></a>
+			 	<a href="<?=$social_data['google'];?>" target="_blank"><img src="<?=DEFAULT_URL?>img/google.png" alt="google" /></a>
 		 	</div>
 		 	<div class="date-time"><p><?php echo date('D, d M Y H:i:s'); ?></p></div>
 		 	<div class="clear"></div>

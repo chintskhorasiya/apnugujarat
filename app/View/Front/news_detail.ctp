@@ -6,7 +6,8 @@ echo $this->element('frontheader');
 		<section class="article-breadcrumb">
 			<?php
 			if(!empty($category_title)){
-				$category_breadcrumb = '<span class="br-arrow">» </span>'.$category_title;	
+				//$category_breadcrumb = '<span class="br-arrow">» </span>'.$category_title;
+				$category_breadcrumb = '<span class="br-arrow">» </span><a href="'.DEFAULT_URL.'news/'.$this->Common->get_cat_slug($category_id).'">'.$category_title.'</a>';	
 			} else {
 				$category_breadcrumb = '';
 			}
@@ -226,7 +227,7 @@ echo $this->element('frontheader');
 				<!-- Simple Currency Rates Table END -->
             </div> 
 			 
-            <h2 class="main-title violet">Gujarat</h2>
+            <a href="<?=DEFAULT_URL?>news/gujarat"><h2 class="main-title violet">Gujarat</h2></a>
 		    <span class="violet-border"></span>
 	        <div class="clear"></div>  
 			<?php
@@ -259,7 +260,7 @@ echo $this->element('frontheader');
  		  	}
  		  	?> 		
             <br/>
-            <h2 class="main-title violet">India</h2>
+            <a href="<?=DEFAULT_URL?>news/india"><h2 class="main-title violet">India</h2></a>
 		    <span class="violet-border"></span>
 	        <div class="clear"></div> 
 	        <div class="gray-bg1">
