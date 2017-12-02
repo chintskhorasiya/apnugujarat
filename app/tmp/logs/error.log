@@ -53069,3 +53069,120 @@ Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
 Stack Trace:
 #0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2017-12-02 10:06:16 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:18 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/img/search.png
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:20 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:23 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/img/search.png
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:24 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:31 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:06:33 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:29 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:37 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:47 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:52 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:58 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2017-12-02 10:12:59 Error: [MissingControllerException] Controller class FontsController could not be found.
+Exception Attributes: array (
+  'class' => 'FontsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp/apnucake2/fonts/GujLekha_1.ttf
+Stack Trace:
+#0 /var/www/cakephp/apnucake2/app/webroot/index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

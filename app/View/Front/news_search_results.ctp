@@ -34,11 +34,18 @@ else
 						} else {
 							$gallery_main_search = DEFAULT_URL.'img/new-default.png';
 						}
+						if(!empty($news_data['News']['categories'])){
+							$catArr = explode(',', $news_data['News']['categories']);
+							$first_cat = $catArr[0];
+							$first_cat_slug = $this->Common->get_cat_slug($first_cat);
+						} else {
+							$first_cat_slug = '';
+						}
 						?>
 	   					<div class="grid-listing grid-listing-left">
-	   						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$news_data['News']['cat_slug'].'/'.$news_data['News']['slug']?>"><img src="<?=$gallery_main_search?>" alt="<?php echo $news_data['News']['title']; ?>" /></a>
+	   						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$first_cat_slug.'/'.$news_data['News']['slug']?>"><img src="<?=$gallery_main_search?>" alt="<?php echo $news_data['News']['title']; ?>" /></a>
 
-							<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$news_data['News']['cat_slug'].'/'.$news_data['News']['slug']?>"><h3><?php echo mb_substr($news_data['News']['title'], 0, 80); ?></h3></a>
+							<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$first_cat_slug.'/'.$news_data['News']['slug']?>"><h3><?php echo mb_substr($news_data['News']['title'], 0, 80); ?></h3></a>
 		   				</div>
 	   					<?php
 	   				}
