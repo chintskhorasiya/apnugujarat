@@ -20,7 +20,7 @@
                                     <?php
                                     if(empty($errorarray) && isset($this->params['pass'][0]) && $this->params['pass'][0]=='succhange')
                                     {
-                                        echo '<div class="sign-up suc-message">'.PASS_CHANGE_CLIENT.'</div>';
+                                        echo '<div class="sign-up suc-message">'.PASS_CHANGE.'</div>';
                                     }
                                     ?>
                                     <div class="form-group">
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <header class="panel-heading position-center" style="position:fixed;bottom:0px;opacity:0.9;">
+                            <header class="panel-heading position-center" style="/*position:fixed;bottom:0px;opacity:0.9;*/">
                                 <div class="form-group">
                                     <div class="col-lg-offset-7 col-lg-12">
                                         <input type="submit" class="btn btn-info" name="btnchange_pass" id="btnchange_pass" value="Submit">

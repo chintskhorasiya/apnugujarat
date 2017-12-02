@@ -5,7 +5,7 @@ echo $this->element('frontheader');
 	<div class="container">
 		<section class="article-breadcrumb">
 			<?php
-			$category_breadcrumb = '<span class="br-arrow">» </span> E-Papers';
+			$category_breadcrumb = '<span class="br-arrow">» </span> E-Paper';
 			?>
 			<a href="<?=DEFAULT_URL?>" title="Home"> Home</a><?=$category_breadcrumb;?>
 		</section>

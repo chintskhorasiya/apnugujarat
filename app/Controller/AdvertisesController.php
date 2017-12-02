@@ -34,6 +34,10 @@ class AdvertisesController extends AppController
 			$insert_ads_data_array['modified'] = date('Y-m-d H:i:s');
 			$insert_ads_data_array['user_id'] = $userid;
 
+			if (!empty($insert_ads_data_array['source']['error']) && $insert_ads_data_array['source']['error']==4 && $insert_ads_data_array['source']['size']==0) {
+	            //echo "flgkmdfklg";exit;
+	            unset($insert_ads_data_array['source']);
+	        }
 			//$insert_ads_data_array['source'] = "some image";
 			//$insert_ads_data_array['link'] = "http://www.google.com";
 			//$insert_ads_data_array['position'] = "home_top_left";

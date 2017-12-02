@@ -7,8 +7,8 @@
 		    	<a href="<?=DEFAULT_FRONT_EPAPERS_URL?>"><img src="<?=DEFAULT_URL?>img/e-paper.png" alt="" /></a>
 		 	</div>
 		  	<div class="search-box">
-		      	<form action="">
-					<input type="text" name="search" placeholder="search"> 
+		      	<form action="<?=DEFAULT_FRONT_NEWS_SEARCH_RESULTS_URL?>" method="POST">
+					<input type="text" name="search_query" id="search_query" placeholder="search"> 
 			  	</form>
 		  	</div>  
 		 	<div class="social">

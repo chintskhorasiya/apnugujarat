@@ -16,10 +16,10 @@
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>pages/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Page</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>pages/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Pages</a>
                             </li>
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>pages/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Pages</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>pages/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Page</a>
                             </li>
                         </ul>
                         <!--<li class="sub-menu"> <a href="javascript:void(0);"> <i class="fa fa-tags"></i> <span>Create Listings</span> </a>
@@ -48,10 +48,10 @@
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>news/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add News</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>news/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View News</a>
                             </li>
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>news/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>News</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>news/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add News</a>
                             </li>
                         </ul>
                     </li>
@@ -61,10 +61,10 @@
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Advertisement</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Advertisements</a>
                             </li>
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Advertisements</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>advertises/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Advertisement</a>
                             </li>
                         </ul>
                     </li>
@@ -74,10 +74,10 @@
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Video</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View Videos</a>
                             </li>
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>Videos</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>videos/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add Video</a>
                             </li>
                         </ul>
                     </li>
@@ -87,10 +87,20 @@
                         </a>
                         <ul class="sub">
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add E-Paper</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View E-Papers</a>
                             </li>
                             <li>
-                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/lists/<?php echo $encrypt_id;?>"><i class="fa fa-eye"></i>View E-Papers</a>
+                                <a href="<?php echo DEFAULT_ADMINURL ?>epapers/add/<?php echo $encrypt_id;?>"><i class="fa fa-plus"></i>Add E-Paper</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                         <a href="javascript:void(0);">
+                            <i class="fa fa-tags"></i><span>Settings</span>
+                        </a>
+                        <ul class="sub">
+                            <li>
+                                <a href="<?php echo DEFAULT_ADMINURL.'users/change_password' ?>"><i class=" fa fa-suitcase"></i>Change Password</a>
                             </li>
                         </ul>
                     </li>

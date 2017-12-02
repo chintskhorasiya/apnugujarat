@@ -62,6 +62,11 @@
 	    array('controller' => 'front', 'action' => 'epapers_listing')
 	);
 
+	Router::connect(
+	    '/news-search-results/*',
+	    array('controller' => 'front', 'action' => 'news_search_results')
+	);
+
     /*Router::connect(
 	    '/admin',
 	    array('controller' => 'users')

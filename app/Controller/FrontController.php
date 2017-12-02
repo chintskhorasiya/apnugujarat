@@ -301,7 +301,7 @@ class FrontController extends AppController
 
         $this->paginate = array(
             'conditions' => array('status IN'=> array(1)),
-            'limit' => 2,
+            'limit' => 10,
             'order' => array('id' => 'desc')
         );
 
@@ -408,6 +408,61 @@ class FrontController extends AppController
         $this->set('category_name', $category_name);
         $this->set('category_image', $category_image);
         $this->set('epapers_data', $get_epapers_data);
+    }
+
+    public function news_search_results(){
+
+        $this->loadmodel('News');
+
+        if ($this->request->is('post'))
+        {
+            if(!empty($this->request->data) && isset($this->request->data) )
+            {
+                //$this->pre($this->request->data);exit;
+                $search_key = trim($this->request->data['search_query']);
+     
+                $conditions[] = array(
+                    "OR" => array(
+                        "News.title LIKE" => "%".$search_key."%",
+                        "News.content LIKE" => "%".$search_key."%",
+                        "News.seo_title LIKE" => "%".$search_key."%",
+                        "News.seo_desc LIKE" => "%".$search_key."%"
+                    )
+                );
+
+                $this->Session->write('frontSearchNewsCond', $conditions);
+                $this->Session->write('front_search_news_key', $search_key);
+            }
+        }
+
+        $mainConditions = array('status IN'=> array(1));
+
+        if ($this->Session->check('frontSearchNewsCond')) {
+            $conditions = $this->Session->read('frontSearchNewsCond');
+            $allConditions = array_merge($mainConditions, $conditions);
+        } else {
+            $conditions = null;
+            $allConditions = array_merge($mainConditions, $conditions);
+        }
+
+        //$this->pre($allConditions);exit;
+
+        $this->paginate = array(
+            'conditions' => $allConditions,
+            'limit' => 25,
+            'order' => array('id' => 'desc')
+        );
+
+        $news_data = $this->paginate('News');
+
+        //$this->pre($news_data);exit;
+
+        $this->set('page_heading','News Search Results');
+
+        $this->set('news_search_data',$news_data);
+        $this->set('from_search',true);
+
+        //exit;
     }
 
 }
