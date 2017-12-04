@@ -20,8 +20,8 @@ class Epaper extends AppModel {
                 'allowEmpty' => TRUE,
             ),
             'fileSize' => array(
-                'rule' => array('fileSize', '<=', '2MB'),
-                'message' => 'E-Paper must be less than 2MB.',
+                'rule' => array('fileSize', '<=', '25MB'),
+                'message' => 'E-Paper must be less than 25MB.',
                 'allowEmpty' => true,
             ),
             // http://book.cakephp.org/2.0/en/models/data-validation.html#Validation::mimeType

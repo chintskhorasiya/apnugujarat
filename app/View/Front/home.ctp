@@ -5,6 +5,7 @@ echo $this->element('frontheader');
    	<div class="container"> 
 	   	<div class="left-part"> <!-- left-part start -->
 	     	<div class="col-md-9 sec-part1-left">
+            	<a href="<?php echo $this->Common->get_listing_url(9); ?>"><h2 class="main-title green">Top Story</h2></a>
             	<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
 					<div class="carousel-inner">
 					  	<?php

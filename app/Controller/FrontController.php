@@ -11,7 +11,7 @@ class FrontController extends AppController
     	$this->loadmodel('News');
         $this->loadmodel('NewsCategory');
 
-    	$latest_news_gallery_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1)), 'limit' => 3, 'order' => array('id' => 'desc')));
+    	$latest_news_gallery_data = $this->News->find('all', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'9\',categories)'), 'limit' => 3, 'order' => array('id' => 'desc')));
         foreach ($latest_news_gallery_data as $latest_news_key => $latest_news_data)
         {
             $latest_news_cats = explode(',', $latest_news_data['News']['categories']);
@@ -23,7 +23,7 @@ class FrontController extends AppController
         }
     	$this->set('latest_news_gallery_data', $latest_news_gallery_data);
 
-    	$latest_news_4th_data = $this->News->find('first', array('conditions' => array('status IN'=> array(1)), 'limit' => 1, 'page' => 4,  'order' => array('id' => 'desc')));
+    	$latest_news_4th_data = $this->News->find('first', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'9\',categories)'), 'limit' => 1, 'page' => 4,  'order' => array('id' => 'desc')));
         $latest_news_4th_cats = explode(',', $latest_news_4th_data['News']['categories']);
         $latest_news_4th_cat = $latest_news_4th_cats[0];
         $latest_newscate_4th_data = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>$latest_news_4th_cat)));
@@ -32,7 +32,7 @@ class FrontController extends AppController
         $latest_news_4th_data['News']['cat_slug'] = $latest_newscate_4th_data['NewsCategory']['slug'];
     	$this->set('latest_news_4th_data', $latest_news_4th_data);
 
-    	$latest_news_5th_data = $this->News->find('first', array('conditions' => array('status IN'=> array(1)), 'limit' => 1, 'page' => 5,  'order' => array('id' => 'desc')));
+    	$latest_news_5th_data = $this->News->find('first', array('conditions' => array('status IN'=> array(1), 'FIND_IN_SET(\'9\',categories)'), 'limit' => 1, 'page' => 5,  'order' => array('id' => 'desc')));
         $latest_news_5th_cats = explode(',', $latest_news_5th_data['News']['categories']);
         $latest_news_5th_cat = $latest_news_5th_cats[0];
         $latest_newscate_5th_data = $this->NewsCategory->find('first', array('conditions' => array('status IN'=> array(1), 'id'=>$latest_news_4th_cat)));
@@ -209,6 +209,7 @@ class FrontController extends AppController
             $news_page_images = $get_news_data_by_slug['News']['images'];
             $news_page_videos = $get_news_data_by_slug['News']['videos'];
             $news_page_modified = $get_news_data_by_slug['News']['modified'];
+            $news_page_views = (int) $get_news_data_by_slug['News']['views'];
         } else {
             $news_page_id = '';
             $news_page_content = '';
@@ -216,6 +217,7 @@ class FrontController extends AppController
             $news_page_images = '';
             $news_page_videos = '';
             $news_page_modified = '';
+            $new_page_views = 0;
         }
 
         $this->loadmodel('NewsCategory');
@@ -267,8 +269,18 @@ class FrontController extends AppController
             $get_sidebardown_data_by_category = array();
         }
 
+        if($news_page_id){
+            $news_page_views++;
+            $update_views_data = array();
+            $update_views_data['News']['id'] = $news_page_id;
+            $update_views_data['News']['views'] = $news_page_views;
+            //$this->pre($update_views_data);exit;
+            $this->News->save($update_views_data, false);
+        }
+
         $this->set('category_id', $category_id);
         $this->set('category_title', $category_title);
+        $this->set('news_page_id', $news_page_id);
         $this->set('news_page_title', $news_page_title);
         $this->set('news_page_images', $news_page_images);
         $this->set('news_page_videos', $news_page_videos);

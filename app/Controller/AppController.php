@@ -130,7 +130,7 @@ class AppController extends Controller {
             }
             $this->set('latest_india_footer_data', $latest_india_footer_data);
 
-            $header_cate_menus_data = $this->NewsCategory->find('all', array('conditions' => array('status IN'=> array(1), 'menu_enabled'=>1), 'limit' => 8, 'order' => array('id' => 'asc')));
+            $header_cate_menus_data = $this->NewsCategory->find('all', array('conditions' => array('status IN'=> array(1), 'menu_enabled'=>1), 'limit' => 8, 'order' => array('menu_order' => 'asc')));
             $this->set('header_cate_menus_data', $header_cate_menus_data);
             
             $footer_pages_data = $this->Page->find('all', array('conditions' => array('status IN'=> array(1)), 'limit' => 5, 'order' => array('id' => 'asc')));
