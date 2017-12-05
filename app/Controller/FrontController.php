@@ -278,6 +278,7 @@ class FrontController extends AppController
             $this->News->save($update_views_data, false);
         }
 
+        $this->set('page_name', 'news_detail');
         $this->set('category_id', $category_id);
         $this->set('category_title', $category_title);
         $this->set('news_page_id', $news_page_id);

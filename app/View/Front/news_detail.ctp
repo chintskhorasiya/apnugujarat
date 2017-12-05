@@ -44,7 +44,7 @@ echo $this->element('frontheader');
             .youtube .play {
 			    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAERklEQVR4nOWbTWhcVRTHb1IJVoxGtNCNdal2JYJReC6GWuO83PM/59yUS3FRFARdFlwYP1CfiojQWt36sRCUurRIdVFXIn41lAoVdRGrG1M01YpKrWjiYmaSl8ybZJL3cd+YA//NLObd3++eO8x79z5jSq5Gw+8kov0AP8vMR5l1BtBZQM4B8ks75wCdZdYZZj5qLZ4hov2Nht9Z9vhKKSIaB/gI4M4w62KeAO6Mte4lYOq20FxrlqqOibhHmeWbvNC9ZfDX1mLae391aN6limO/gwgvAPJbWeAZuSDingdwXTBw7/0IsyaA/Fkh+KqOkD+YNfHej1QKD+y7iVlOhgLvFqFfNJvNGyuBJ+KDAF8MDd0tgS8y64OlgSdJMsysL4cG7SOHkyQZLhTee7+d2R2rAVy/S+Jd7/32ouBHAP4gNNRGQyTHc/84NhqNywZp5rvjjnnvt21aABFeCQ+RLwAf2hQ8s7sv9OCLk6AHNgQvIrvbfzKCD76g/O6cu7lf/iER/aQGgy448pExZmhdegAPhR9sObFWH1gT3lp7DaA/5bkIgJhZPgsNmz02novj+KqeApj1ubwXWe4kdyeznAgNvTpE/HQmvKqOMeuFogTUVQSRno+iaLRLAJF7uIgL9O4ubgL8aWgB7S44mNX+35YpICUiAvS9sBLkq1WzT+NFffl6AuoiApi6NT37h6sWkBIRZGkQ8YtLgyji6e1mBYTqCEBPG2Naz+0BWQgtoGoRgCzEsd9hAN1X5BfnFZASUfrSAFQNsyZ1FJASUVpHiLinDJG8U2cBZYogkrcNs5waBAGdstbeU9zdqpw0gPwwSAI6VUxHyFlDpOcHUUBBIuYNs14aZAE5RVwyzPr3/0EAEY0TyfGNjBWQvwZ +CTSbehfAH29mrID8bET0+0EUkAd8WYDOmqJ3ecsG30yr9wqRfm6Y+a1BEFDEjHfHvWmY9ck6CygHvBVr8Xhtb4ZE5HZA3y8DvBNA1TjnrmXWf+sioMwZX5V/VHXMGGMMoKdDCxCRvRWBdzKzdHEO+EisilbPyopHYqp6S9UCAsz4iojI7hUDAtyXVQgIDd6KnOoaWNkbI6FaPSuZGyMArsi7MZoloB4zviI/Nhr3X95jltwTRQmoIfgisy5ai+me67OI7fE4nrqjrqfK1t0eby0FPRB6oGVlchL3rgnfrq19RKbVBdhV9IOSwJmfmJi4vi/4ThERitwyCxVAFqydshuCX5awhQ9KtmuIWd8IDZED/nXT77rvVVv6sHRKwjYi91poqP7Dr+Y6JJ1VSZIMA3wkPNy6bX+o8Bcm0sXMdwM8Fxo0A3xORPaWBp6uPXsmbxCRD0NDL0dOANhVCXy6iAjMcjbcrMt3RITKwdMVRdFo+y5yvkL4eWZ+zHt/ZVD4dEVRNGotpst+dZZZH8k86lqn2pIvT/eqrNfn2xuyqYPZ8mv7s8pfn/8Pybm4TIjanscAAAAASUVORK5CYII=") no-repeat center center;
 			    background-size: 64px 64px;
-			    position: absolute;
+			    /*position: absolute;*/
 			    height: 100%;
 			    width: 100%;
 			    opacity: .8;
@@ -56,6 +56,8 @@ echo $this->element('frontheader');
 			    opacity: 1;
 			    filter: alpha(opacity=100);
 			}
+			.flex-pauseplay .flex-pause{visibility:hidden;}
+			.flex-pauseplay .flex-play{visibility:visible;}
             </style>
             <!-- <div class="youtube"
 			     id="fsrJWUVoXeM" 
@@ -71,6 +73,9 @@ echo $this->element('frontheader');
 				'use strict';
 				function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
 				r(function(){
+				    $('.ytp-play-button').click(function(){
+				    	alert('pause');
+				    })
 				    if (!document.getElementsByClassName) {
 				        // IE8 support
 				        var getElementsByClassName = function(node, classname) {
@@ -98,6 +103,7 @@ echo $this->element('frontheader');
 
 				        videos[i].onclick = function() {
 				            // Create an iFrame with autoplay set to true
+				            $('.flex-pause').click();
 				            var iframe = document.createElement("iframe");
 				            var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
 				            if (this.getAttribute("data-params")) iframe_url+='&'+this.getAttribute("data-params");
@@ -114,15 +120,15 @@ echo $this->element('frontheader');
 				    }
 				});
 			</script>
-            <div id="innermyCarousel" class="carousel slide" data-ride="carousel">
-            	<div class="carousel-inner">
+            <div class="flexslider">
+            	<ul class="slides">
             		<?php
             		$youtube_regex_pattern = "/(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?/";
 					$match;
 
 					foreach ($media_arr as $imgkey => $gimg) {
             			?>
-            			<div class="item <?php if($imgkey == 0){ echo 'active'; } ?>">
+            			<li>
 	            			<?php
 	            			if(preg_match($youtube_regex_pattern, $gimg, $match)){
 							    //echo "Youtube video id is: ".$match[4];
@@ -134,17 +140,11 @@ echo $this->element('frontheader');
 							    ?><img src="<?=$gimg?>" alt="" /><?php
 							}
 	            			?>
-	            		</div>
+	            		</li>
 	            		<?php
             		}
             		?>
-            	</div>
-            	<a class="left carousel-control" href="#innermyCarousel" data-slide="prev">
-            		<span class="glyphicon-chevron-left"><img src="<?=DEFAULT_URL?>img/prev-arrow.png" alt="arrow"></span>
-            	</a>
-            	<a class="right carousel-control" href="#innermyCarousel" data-slide="next">
-            		<span class="glyphicon-chevron-right"><img src="<?=DEFAULT_URL?>img/left-arrow.png" alt="arrow"></span>
-            	</a>  
+            	</ul> 
 			</div>
 			<?php } ?>
 			<div class="inner-list-dec">
@@ -288,6 +288,20 @@ echo $this->element('frontheader');
 	    <div class="clear"></div>
    </div>
 </section> <!-- sec-part1 end -->
+<script type="text/javascript">
+	$(window).load(function(){
+		$('.flexslider').flexslider({
+			animation: "slide",
+			pausePlay: true,
+			pauseText: "",
+			playText: "Play Slideshow",
+			video: false,
+			start: function(slider){
+				$('body').removeClass('loading');
+			}
+		});
+	});
+</script>
 <?php
 echo $this->element('frontfooter');
 ?>
