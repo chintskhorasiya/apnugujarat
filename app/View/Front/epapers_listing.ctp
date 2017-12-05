@@ -22,7 +22,7 @@ echo $this->element('frontheader');
 	   					?>
 	   					<div class="news-b">
 			   				<a target="_blank" href="<?=$epaper_data['Epaper']['epaper']?>"><img src="<?=$category_image?>" alt=""></a>
-			   				<a target="_blank" href="<?=$epaper_data['Epaper']['epaper']?>"><h3><?=$epaper_data['Epaper']['title']?></h3></a>
+			   				<a target="_blank" href="<?=$epaper_data['Epaper']['epaper']?>" title="<?=$epaper_data['Epaper']['title']?>"><h3><?=$epaper_data['Epaper']['title']?></h3></a>
 			   			</div>
 	   					<?php
 	   				}

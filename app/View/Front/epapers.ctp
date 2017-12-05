@@ -17,12 +17,12 @@ echo $this->element('frontheader');
 	   		<h1 class="inner-title">E - Paper</h1>
 	   		<div class="e-paper-box">
 	   			<div class="news-b">
-	   				<a href="<?=DEFAULT_FRONT_EPAPERS_AUS_URL?>"><img src="<?=DEFAULT_FRONT_EPAPERS_AUS_IMG_URL?>" alt=""></a>
-	   				<a href="<?=DEFAULT_FRONT_EPAPERS_AUS_URL?>"><h3>Australia</h3></a>
+	   				<a href="<?=DEFAULT_FRONT_EPAPERS_AUS_URL?>" title="Australia"><img src="<?=DEFAULT_FRONT_EPAPERS_AUS_IMG_URL?>" alt="Australia"></a>
+	   				<a href="<?=DEFAULT_FRONT_EPAPERS_AUS_URL?>" title="Australia"><h3>Australia</h3></a>
 	   			</div>
 	   			<div class="news-b">
-	   				<a href="<?=DEFAULT_FRONT_EPAPERS_NZ_URL?>"><img src="<?=DEFAULT_FRONT_EPAPERS_NZ_IMG_URL?>" alt=""></a>
-					<a href="<?=DEFAULT_FRONT_EPAPERS_NZ_URL?>"><h3>New Zealand</h3></a>
+	   				<a href="<?=DEFAULT_FRONT_EPAPERS_NZ_URL?>" title="New Zealand"><img src="<?=DEFAULT_FRONT_EPAPERS_NZ_IMG_URL?>" alt="New Zealand"></a>
+					<a href="<?=DEFAULT_FRONT_EPAPERS_NZ_URL?>" title="New Zealand"><h3>New Zealand</h3></a>
 				</div>
 			</div>
 		</div>
