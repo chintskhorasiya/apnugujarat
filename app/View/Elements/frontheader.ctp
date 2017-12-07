@@ -63,7 +63,7 @@
 		    		<span class="icon-bar"></span>
 		    		<span class="icon-bar"></span>
 		    	</button>
-			    <ul class="nav navbar-nav">
+			    <ul class="nav navbar-nav navbar-collapse collapse">
 			    	<li class="active home-menu">
 				  		<a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/home-icon.png" alt="home" /></a>
 				  	</li>

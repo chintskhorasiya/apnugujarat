@@ -449,98 +449,29 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 	        {
 	        ?>
 	        <style>
-            .youtube .play {
-			    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAERklEQVR4nOWbTWhcVRTHb1IJVoxGtNCNdal2JYJReC6GWuO83PM/59yUS3FRFARdFlwYP1CfiojQWt36sRCUurRIdVFXIn41lAoVdRGrG1M01YpKrWjiYmaSl8ybZJL3cd+YA//NLObd3++eO8x79z5jSq5Gw+8kov0AP8vMR5l1BtBZQM4B8ks75wCdZdYZZj5qLZ4hov2Nht9Z9vhKKSIaB/gI4M4w62KeAO6Mte4lYOq20FxrlqqOibhHmeWbvNC9ZfDX1mLae391aN6limO/gwgvAPJbWeAZuSDingdwXTBw7/0IsyaA/Fkh+KqOkD+YNfHej1QKD+y7iVlOhgLvFqFfNJvNGyuBJ+KDAF8MDd0tgS8y64OlgSdJMsysL4cG7SOHkyQZLhTee7+d2R2rAVy/S+Jd7/32ouBHAP4gNNRGQyTHc/84NhqNywZp5rvjjnnvt21aABFeCQ+RLwAf2hQ8s7sv9OCLk6AHNgQvIrvbfzKCD76g/O6cu7lf/iER/aQGgy448pExZmhdegAPhR9sObFWH1gT3lp7DaA/5bkIgJhZPgsNmz02novj+KqeApj1ubwXWe4kdyeznAgNvTpE/HQmvKqOMeuFogTUVQSRno+iaLRLAJF7uIgL9O4ubgL8aWgB7S44mNX+35YpICUiAvS9sBLkq1WzT+NFffl6AuoiApi6NT37h6sWkBIRZGkQ8YtLgyji6e1mBYTqCEBPG2Naz+0BWQgtoGoRgCzEsd9hAN1X5BfnFZASUfrSAFQNsyZ1FJASUVpHiLinDJG8U2cBZYogkrcNs5waBAGdstbeU9zdqpw0gPwwSAI6VUxHyFlDpOcHUUBBIuYNs14aZAE5RVwyzPr3/0EAEY0TyfGNjBWQvwZ +CTSbehfAH29mrID8bET0+0EUkAd8WYDOmqJ3ecsG30yr9wqRfm6Y+a1BEFDEjHfHvWmY9ck6CygHvBVr8Xhtb4ZE5HZA3y8DvBNA1TjnrmXWf+sioMwZX5V/VHXMGGMMoKdDCxCRvRWBdzKzdHEO+EisilbPyopHYqp6S9UCAsz4iojI7hUDAtyXVQgIDd6KnOoaWNkbI6FaPSuZGyMArsi7MZoloB4zviI/Nhr3X95jltwTRQmoIfgisy5ai+me67OI7fE4nrqjrqfK1t0eby0FPRB6oGVlchL3rgnfrq19RKbVBdhV9IOSwJmfmJi4vi/4ThERitwyCxVAFqydshuCX5awhQ9KtmuIWd8IDZED/nXT77rvVVv6sHRKwjYi91poqP7Dr+Y6JJ1VSZIMA3wkPNy6bX+o8Bcm0sXMdwM8Fxo0A3xORPaWBp6uPXsmbxCRD0NDL0dOANhVCXy6iAjMcjbcrMt3RITKwdMVRdFo+y5yvkL4eWZ+zHt/ZVD4dEVRNGotpst+dZZZH8k86lqn2pIvT/eqrNfn2xuyqYPZ8mv7s8pfn/8Pybm4TIjanscAAAAASUVORK5CYII=") no-repeat center center;
-			    background-size: 64px 64px;
-			    position: absolute;
-			    height: 100%;
-			    width: 100%;
-			    opacity: .8;
-			    filter: alpha(opacity=80);
-			    transition: all 0.2s ease-out;
-			}
-
-			.youtube .play:hover {
-			    opacity: 1;
-			    filter: alpha(opacity=100);
-			}
+            .owl-video-wrapper .owl-video-tn{min-height: 300px !important;}
             </style>
-            <!-- <div class="youtube"
-			     id="fsrJWUVoXeM" 
-			     style="width: 500px; height: 281px;">
-			</div> -->
-
-			<!-- <div class="youtube" 
-			     id="lR4tJr7sMPM" 
-			     data-params="modestbranding=1&showinfo=0&controls=0&vq=hd720"
-			     style="width: 640px; height: 360px;">
-			</div> -->
-			<script type="text/javascript">
-				'use strict';
-				function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-				r(function(){
-				    if (!document.getElementsByClassName) {
-				        // IE8 support
-				        var getElementsByClassName = function(node, classname) {
-				            var a = [];
-				            var re = new RegExp('(^| )'+classname+'( |$)');
-				            var els = node.getElementsByTagName("*");
-				            for(var i=0,j=els.length; i<j; i++)
-				                if(re.test(els[i].className))a.push(els[i]);
-				            return a;
-				        }
-				        var videos = getElementsByClassName(document.body,"youtube");
-				    } else {
-				        var videos = document.getElementsByClassName("youtube");
-				    }
-
-				    var nb_videos = videos.length;
-				    for (var i=0; i<nb_videos; i++) {
-				        // Based on the YouTube ID, we can easily find the thumbnail image
-				        videos[i].style.backgroundImage = 'url(http://i.ytimg.com/vi/' + videos[i].id + '/hqdefault.jpg)';
-
-				        // Overlay the Play icon to make it look like a video player
-				        var play = document.createElement("div");
-				        play.setAttribute("class","play");
-				        videos[i].appendChild(play);
-
-				        videos[i].onclick = function() {
-				            // Create an iFrame with autoplay set to true
-				            var iframe = document.createElement("iframe");
-				            var iframe_url = "https://www.youtube.com/embed/" + this.id + "?autoplay=1&autohide=1";
-				            if (this.getAttribute("data-params")) iframe_url+='&'+this.getAttribute("data-params");
-				            iframe.setAttribute("src",iframe_url);
-				            iframe.setAttribute("frameborder",'0');
-
-				            // The height and width of the iFrame should be the same as parent
-				            iframe.style.width  = this.style.width;
-				            iframe.style.height = this.style.height;
-
-				            // Replace the YouTube thumbnail with YouTube Player
-				            this.parentNode.replaceChild(iframe, this);
-				        }
-				    }
-				});
-			</script>
-	        <a href="<?=DEFAULT_URL.'videos'?>"><h2 class="main-title yellow">Videos</h2></a>
+            <a href="<?=DEFAULT_URL.'videos'?>"><h2 class="main-title yellow">Videos</h2></a>
 		    <span class="yellow-border"></span>
 	        <div class="clear"></div> 
-	        <div id="videomyCarousel" class="carousel slide" data-ride="carousel">
-	        	<div class="carousel-inner">
+	        <div class="owl-carousel owl-theme">
 	        		<?php
 	        		$youtube_regex_pattern = "/(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?/";
 					$match;
 
 	        		foreach ($latest_videos_homepage_data as $video_key => $video_data) {
 	        		?>
-	        		<div class="item <?php if($video_key == 0){ echo "active"; } ?> news-b">
+	        		<div class="item news-b">
 	        			<a href="#">
 	        			<?php
             			if(preg_match($youtube_regex_pattern, $video_data['Video']['video'], $match)){
 						    //echo "Youtube video id is: ".$match[4];
-						    ?>
+						    /*?>
 						    <div class="youtube" id="<?=$match[4];?>" style="width: 100%; height: 250px;background-size: 100%;">
 							</div>
+						    <?php*/
+						    ?>
+						    <a class="owl-video" href="https://www.youtube.com/watch?v=<?=$match[4];?>"></a>
 						    <?php
 						}else{
 						    echo $video_data['Video']['title'];
@@ -552,14 +483,6 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 	        		<?php
 	        		}
 	        		?>
-				</div>
-
-				<a class="left carousel-control" href="#videomyCarousel" data-slide="prev">
-					<span class="glyphicon-chevron-left"><img src="<?=DEFAULT_URL?>img/prev-arrow.png" alt="arrow"></span>
-				</a>
-				<a class="right carousel-control" href="#videomyCarousel" data-slide="next">
-					<span class="glyphicon-chevron-right"><img src="<?=DEFAULT_URL?>img/left-arrow.png" alt="arrow"></span>
-				</a>
 			</div>
            	<div class="clear"></div>	
            	<?php
@@ -673,7 +596,35 @@ $last_latest_guj_num = count($latest_gujarat_homepage_data)-1;
 	    <div class="clear"></div>
 	</div>
 </section> <!-- sec-part6 end -->
-
+<script type="text/javascript">
+	$(document).ready(function() {
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+        margin: 10,
+        nav: true,
+        loop: true,
+        //autoHeight:true,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        video:true,
+        lazyLoad:true,
+        center:true,
+        dots: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 1
+          },
+          1000: {
+            items: 1
+          }
+        }
+      })
+    });
+</script>
 <?php
 echo $this->element('frontfooter');
 ?>
