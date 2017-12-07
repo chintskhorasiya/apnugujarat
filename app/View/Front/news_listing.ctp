@@ -43,7 +43,8 @@ echo $this->element('frontheader');
 	         	</div>	
 	         	<div class="col-md-7 list-dec">
 			    	<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$cat_news_data['News']['cat_slug'].'/'.$cat_news_data['News']['slug']?>"><h3><?php echo $cat_news_data['News']['title']; ?></h3></a>
-	            	<?php echo mb_substr($cat_news_data['News']['content'], 0, 240); ?>
+	            	<?php echo $this->Common->limit_text($cat_news_data['News']['content'], 50); ?>
+	            	<?php //echo $cat_news_data['News']['content']; ?>
 	         	</div>	
 			  	<div class="clear"></div>
 			  	<?php } ?>

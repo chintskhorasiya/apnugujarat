@@ -7,7 +7,7 @@
         </title>
         <link rel="shortcut icon" href="<?php echo IMAGE_URL;?>favicon.png" type="image/png-icon"/>
         <link rel="icon" href="<?php echo IMAGE_URL;?>favicon.png" type="image/x-icon" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <noscript>Your browser does not support JavaScript!</noscript>
 
         <?php /* */ ?>
