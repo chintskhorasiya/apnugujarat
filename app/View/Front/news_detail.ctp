@@ -121,7 +121,7 @@ echo $this->element('frontheader');
 	   
 	    <div class="right-part"> <!-- right-part start -->
 	        <!-- Simple Currency Rates Table START -->
-			<link rel="stylesheet" type="text/css" href="//www.exchangerates.org.uk/widget/ER-SCRT2-css.php?w=180&nb=10&bdrc=E0E0E0&mbg=FFFFFF&fc=333333&tc=333333" media="screen" />
+			<link rel="stylesheet" type="text/css" href="//www.exchangerates.org.uk/widget/ER-SCRT2-css.php?w=180&nb=5&bdrc=E0E0E0&mbg=FFFFFF&fc=333333&tc=333333" media="screen" />
 	        <div class="currency-rate-widget">
                	<!--<img src="<?=DEFAULT_URL?>img/currency-rate.jpg" alt="" />-->
 				<!--<div id="erscrt2">-->
@@ -131,17 +131,12 @@ echo $this->element('frontheader');
 					var tz = '5.5';
 					var w = '180';
 					var mc = 'NZD';
-					var nb = '10';
+					var nb = '5';
 					var c1 = 'USD';
 					var c2 = 'EUR';
 					var c3 = 'AUD';
-					var c4 = 'JPY';
+					var c4 = 'GBP';
 					var c5 = 'INR';
-					var c6 = 'CAD';
-					var c7 = 'ZAR';
-					var c8 = 'BYR';
-					var c9 = 'SGD';
-					var c10 = 'CNY';
 					var t = 'Live Exchange Rates';
 					var tc = '333333';
 					var bdrc = 'E0E0E0';
@@ -153,6 +148,12 @@ echo $this->element('frontheader');
 					</script>
 				<!--</div>-->
 				<!-- Simple Currency Rates Table END -->
+            </div>
+            <div class="cric-widget">
+            	<script>
+            	app="www.cricwaves.com"; mo="Z_W"; tor =""; mtype ="";  wi="{{wi}}"; Width="320px"; Height="172px";  co ="aus";
+            	</script>
+            	<script type="text/javascript" src="http://www.cricwaves.com/cricket/widgets/script/scoreWidgets.js"></script>
             </div> 
 			 
             <a href="<?=DEFAULT_URL?>news/gujarat"><h2 class="main-title violet">Gujarat</h2></a>

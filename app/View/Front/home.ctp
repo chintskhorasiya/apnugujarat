@@ -67,6 +67,46 @@ echo $this->element('frontheader');
                 	<img src="<?=DEFAULT_URL?>img/gujarat-tv.jpg" alt="gujarat-tv" />
              	</div> 
               	<?php
+		        if(isset($latest_videos_homepage_data) && count($latest_videos_homepage_data) > 0)
+		        {
+		        ?>
+		        <style>
+	            .owl-video-wrapper .owl-video-tn{min-height: 200px !important;}
+	            </style>
+	            <div class="owl-carousel owl-theme">
+		        		<?php
+		        		$youtube_regex_pattern = "/(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?/";
+						$match;
+
+		        		foreach ($latest_videos_homepage_data as $video_key => $video_data) {
+		        		?>
+		        		<div class="item news-b">
+		        			<a href="#">
+		        			<?php
+	            			if(preg_match($youtube_regex_pattern, $video_data['Video']['video'], $match)){
+							    //echo "Youtube video id is: ".$match[4];
+							    /*?>
+							    <div class="youtube" id="<?=$match[4];?>" style="width: 100%; height: 250px;background-size: 100%;">
+								</div>
+							    <?php*/
+							    ?>
+							    <a class="owl-video" href="https://www.youtube.com/watch?v=<?=$match[4];?>"></a>
+							    <?php
+							}else{
+							    echo $video_data['Video']['title'];
+							}
+	            			?>
+		        			</a>
+		        			<a href="#"><h3><?php echo mb_substr($video_data['Video']['title'], 0, 80); ?></h3></a>
+		        		</div>
+		        		<?php
+		        		}
+		        		?>
+				</div>
+	           	<?php
+	           	}
+	           	?>
+              	<?php
               	if(!empty($latest_news_4th_data)){
               		?>
               		<div class="news-b">
@@ -85,7 +125,7 @@ echo $this->element('frontheader');
               	}
               	?>
               	<?php
-              	if(!empty($latest_news_5th_data)){
+              	/*if(!empty($latest_news_5th_data)){
               		?>
               		<div class="news-b">
               			<?php
@@ -100,7 +140,7 @@ echo $this->element('frontheader');
 						<a href="<?=DEFAULT_FRONT_NEWS_DETAIL_URL.$latest_news_5th_data['News']['cat_slug'].'/'.$latest_news_5th_data['News']['slug']?>"><h3><?php echo $latest_news_5th_data['News']['title']; ?></h3></a>
 	              	</div>	
 	              	<?php
-              	}
+              	}*/
               	?>
          	</div>	
 		  	<div class="clear"></div>
@@ -118,7 +158,7 @@ echo $this->element('frontheader');
 
 	    <div class="right-part"> <!-- right-part start -->
 	    	<!-- Simple Currency Rates Table START -->
-			<link rel="stylesheet" type="text/css" href="//www.exchangerates.org.uk/widget/ER-SCRT2-css.php?w=180&nb=10&bdrc=E0E0E0&mbg=FFFFFF&fc=333333&tc=333333" media="screen" />
+			<link rel="stylesheet" type="text/css" href="//www.exchangerates.org.uk/widget/ER-SCRT2-css.php?w=180&nb=5&bdrc=E0E0E0&mbg=FFFFFF&fc=333333&tc=333333" media="screen" />
 	        <div class="currency-rate-widget">
                	<!--<img src="<?=DEFAULT_URL?>img/currency-rate.jpg" alt="" />-->
 				<!--<div id="erscrt2">-->
@@ -128,17 +168,12 @@ echo $this->element('frontheader');
 					var tz = '5.5';
 					var w = '180';
 					var mc = 'NZD';
-					var nb = '10';
+					var nb = '5';
 					var c1 = 'USD';
 					var c2 = 'EUR';
 					var c3 = 'AUD';
-					var c4 = 'JPY';
+					var c4 = 'GBP';
 					var c5 = 'INR';
-					var c6 = 'CAD';
-					var c7 = 'ZAR';
-					var c8 = 'BYR';
-					var c9 = 'SGD';
-					var c10 = 'CNY';
 					var t = 'Live Exchange Rates';
 					var tc = '333333';
 					var bdrc = 'E0E0E0';
@@ -150,13 +185,19 @@ echo $this->element('frontheader');
 					</script>
 				<!--</div>-->
 				<!-- Simple Currency Rates Table END -->
+            </div>
+            <div class="cric-widget">
+            	<script>
+            	app="www.cricwaves.com"; mo="Z_W"; tor =""; mtype ="";  wi="{{wi}}"; Width="320px"; Height="172px";  co ="aus";
+            	</script>
+            	<script type="text/javascript" src="http://www.cricwaves.com/cricket/widgets/script/scoreWidgets.js"></script>
             </div> 
 			<?php
  		  	if($ads_home_rightbar_first_data)
  		  	{
  		  		if(!empty($ads_home_rightbar_first_data['Advertise']['source'])){
  		  		?>
- 		  		<div class="adv3"><a target="_blank" href="<?=$ads_home_rightbar_first_data['Advertise']['link']?>"><img src="<?=$ads_home_rightbar_first_data['Advertise']['source']?>" alt="<?=$ads_home_rightbar_first_data['Advertise']['title']?>" /></a></div>
+ 		  		<div class="adv3 right-adv-banner"><a target="_blank" href="<?=$ads_home_rightbar_first_data['Advertise']['link']?>"><img src="<?=$ads_home_rightbar_first_data['Advertise']['source']?>" alt="<?=$ads_home_rightbar_first_data['Advertise']['title']?>" /></a></div>
  		  		<?php
  		  		}
  		  	}
