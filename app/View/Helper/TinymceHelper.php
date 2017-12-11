@@ -53,7 +53,7 @@ class TinymceHelper extends AppHelper {
   height: 500,
   menubar: false,
   plugins: \'image code\',
-  toolbar: \'undo redo | link image | formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat\',
+  toolbar: \'undo redo | link image | formatselect | code | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat\',
   // enable title field in the Image dialog
   image_title: true, 
   // enable automatic uploads of images represented by blob or data URIs

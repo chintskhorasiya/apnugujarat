@@ -42,7 +42,7 @@
  		  		}
  		  	}
  		  	?>
-		  	<div class="logo"><a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/logo.png" alt="logo" /></a></div>
+		  	<div class="logo"><a href="<?=DEFAULT_URL?>"><img src="<?=DEFAULT_URL?>img/logo.jpg" alt="logo" /></a></div>
 		  	<?php
  		  	if($ads_home_top_right_data)
  		  	{
